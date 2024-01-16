@@ -1,12 +1,12 @@
 import React from 'react';
+import Image from 'next/image';
+
 import styles from './SearchMain.module.css';
 
-type Props = {};
-
-const SearchMain = (props: Props) => {
+const SearchMain = () => {
   return (
     <form className={styles.search_main}>
-      <img src="./images/search.svg" alt="search icon" className={styles.search_main__icon} />
+      <Image src="./images/icon-search.svg" alt="Поиск" width={20} height={20} />
       <input
         id="header-search"
         type="search"

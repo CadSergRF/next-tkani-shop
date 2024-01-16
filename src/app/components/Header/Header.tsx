@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from './Header.module.css';
 import { RouteMenu } from '../RouteMenu/RouteMenu';
 import { SearchMain } from '../SearchMain/SearchMain';
+import { SubMenu } from '../SubMenu/SubMenu';
 
 type Props = {};
 
@@ -16,17 +17,23 @@ const Header = (props: Props) => {
         </div>
       </div>
       <div className={styles.header__central}>
-        <img src="./images/logo.svg" alt="search icon" className={styles.header__central_logo} />
+        <Image
+          src="./images/icon-logo.svg"
+          width={300}
+          height={100}
+          alt="Логотип компании Твои ткани"
+        />
         <SearchMain />
         <div className={styles.cart_box}>
           <div className={styles.cart_box__icons}>
-            <img src="./images/heart.svg" alt="search icon" className={styles.cart_box__icon} />
-            <img src="./images/heart.svg" alt="search icon" className={styles.cart_box__icon} />
-            <img src="./images/heart.svg" alt="search icon" className={styles.cart_box__icon} />
+            <Image src="./images/icon-personal.svg" alt="Личный кабинет" width={27} height={27} />
+            <Image src="./images/icon-like.svg" alt="Избранное" width={27} height={27} />
+            <Image src="./images/icon-cart.svg" alt="Корзина товаров" width={27} height={27} />
           </div>
           <button className={styles.cart_box__btn}>Написать в Whats App</button>
         </div>
       </div>
+      <SubMenu />
     </header>
   );
 };
