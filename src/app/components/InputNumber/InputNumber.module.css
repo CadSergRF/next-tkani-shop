@@ -1,0 +1,36 @@
+.input_number {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: 1px solid #000;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.input_number_input {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  appearance: textfield;
+  text-align: center;
+  width: 35px;
+  border: none;
+}
+
+.input_number_input:focus {
+  outline: none;
+}
+
+.input_number_input::-webkit-outer-spin-button,
+.input_number_input::-webkit-inner-spin-button {
+  display: none;
+}
+
+.input_number_btn {
+  border: none;
+  background-color: transparent;
+  height: 20px;
+  padding: 0 4px;
+  cursor: pointer;
+}
