@@ -5,6 +5,7 @@ import { Banner } from '@/components/Banner/Banner';
 import { NewProduct } from '@/components/NewProduct/NewProduct';
 import { LastNews } from '@/components/LastNews/LastNews';
 import Link from 'next/link';
+import clsx from 'clsx';
 
 export default function Home() {
   return (
@@ -18,6 +19,12 @@ export default function Home() {
           <Link href="/catalog" className={styles.main_link_container}>
             Перейти в каталог
           </Link>
+          <div className={styles.main_social}>
+            <h3 className={styles.main_social_title}>Мы в соцсетях:</h3>
+            <Link href="" className={clsx(styles.main_social_link, styles.link_telegram)} />
+            <Link href="" className={clsx(styles.main_social_link, styles.link_instaram)} />
+            <Link href="" className={clsx(styles.main_social_link, styles.link_vk)} />
+          </div>
         </div>
       </main>
     </>
