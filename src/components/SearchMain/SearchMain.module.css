@@ -25,7 +25,13 @@
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
-  background: url('../../../../public/images/icon-close.svg');
+  background-color: transparent;
+  background-image: url(../../lib/images/icon-close.svg);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: opacity 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .search_main__btn {
