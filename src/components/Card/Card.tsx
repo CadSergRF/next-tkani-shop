@@ -3,10 +3,9 @@ import Image from 'next/image';
 
 import styles from './Card.module.css';
 
-import { TCardLittle } from '@/Types/TCard';
-import { InputNumber } from '../ui-kit/InputNumber/InputNumber';
 import { AddToCart } from '../Forms/AddToCart/AddToCart';
 import clsx from 'clsx';
+import { TCardLittle } from '@/Types/TCard';
 
 type Props = {
   card: TCardLittle;
