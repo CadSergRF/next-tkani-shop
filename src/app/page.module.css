@@ -37,36 +37,6 @@
   font-size: 23px;
 }
 
-.main_social_link {
-  width: 42px;
-  min-width: 42px;
-  height: 42px;
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-  transition: opacity 0.2s ease-in-out;
-  cursor: pointer;
-}
-
-.main_social_link {
-  opacity: 0.8;
-}
-
-.link_telegram {
-  background-image: url(../lib/images/telegram_icon.png);
-}
-
-.link_instaram {
-  background-image: url(../lib/images/instagram_icon.png);
-}
-
-.link_vk {
-  background-image: url(../lib/images/vk_icon.png);
-}
-
 .main_why {
   width: 90%;
   margin: 60px auto;
@@ -90,6 +60,7 @@
 }
 
 .main_why_block_text {
+  text-indent: 20px;
   color: var(--color-text-main);
   font-weight: 400;
   font-size: 18px;

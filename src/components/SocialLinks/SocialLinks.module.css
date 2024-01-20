@@ -1,0 +1,36 @@
+.social_links {
+  display: flex;
+  gap: 10px;
+}
+
+.social_link {
+  width: 42px;
+  min-width: 42px;
+  height: 42px;
+  min-height: 42px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: opacity 0.2s ease-in-out;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.social_link:hover {
+  opacity: 0.8;
+}
+
+.social_link_telegram {
+  background-image: url(../../lib/images/telegram_icon.png);
+}
+
+.social_link_instagram {
+  background-image: url(../../lib/images/instagram_icon.png);
+}
+
+.social_link_vk {
+  background-image: url(../../lib/images/vk_icon.png);
+}

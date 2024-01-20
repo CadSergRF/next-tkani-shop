@@ -6,6 +6,7 @@ import { NewProduct } from '@/components/NewProduct/NewProduct';
 import { LastNews } from '@/components/LastNews/LastNews';
 import Link from 'next/link';
 import clsx from 'clsx';
+import { SocialLinks } from '@/components/SocialLinks/SocialLinks';
 
 export default function Home() {
   return (
@@ -21,9 +22,7 @@ export default function Home() {
           </Link>
           <div className={styles.main_social}>
             <h3 className={styles.main_social_title}>Мы в соцсетях:</h3>
-            <Link href="" className={clsx(styles.main_social_link, styles.link_telegram)} />
-            <Link href="" className={clsx(styles.main_social_link, styles.link_instaram)} />
-            <Link href="" className={clsx(styles.main_social_link, styles.link_vk)} />
+            <SocialLinks />
           </div>
           <section className={styles.main_why}>
             <article className={styles.main_why_block}>
@@ -42,7 +41,7 @@ export default function Home() {
             </article>
             <article className={styles.main_why_block}>
               <h2 className={styles.main_why_block_title}>
-                Какие ткани представленны в нашем магазине?
+                Какие ткани представлены в нашем магазине?
               </h2>
               <p className={styles.main_why_block_text}>
                 У нас Вы можете купить хлопковые и смесовые ткани для детей и взрослых по доступным

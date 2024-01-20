@@ -1,0 +1,94 @@
+.footer {
+  width: 73%;
+  margin: 26px auto 0;
+  padding: 35px 10px;
+  background-color: var(--color-light-gray);
+  display: grid;
+  gap: 10px;
+  grid-template-areas:
+    'A C F'
+    'A B B'
+    'A D G';
+}
+
+.footer_nav {
+  grid-area: A;
+  justify-self: start;
+  color: var(--color-text-main);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.footer_nav_underline {
+  text-decoration: underline;
+}
+
+.footer_nav_block {
+  margin-top: 15px;
+}
+
+.footer_nav_link_list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer_nav_link {
+  color: var(--color-text-main);
+  text-decoration: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.footer_nav_link:hover {
+  opacity: 0.8;
+}
+
+.footer_social {
+  grid-area: C;
+  justify-self: center;
+  width: fit-content;
+}
+
+.footer_phone {
+  grid-area: F;
+  justify-self: end;
+  color: var(--color-text-main);
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.footer_company {
+  grid-area: B;
+  justify-self: end;
+  color: var(--color-text-main);
+  font-weight: 500;
+  font-size: 16px;
+  text-align: end;
+}
+
+.footer_info {
+  grid-area: D;
+  justify-self: center;
+  justify-content: center;
+  color: var(--color-text-main);
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+}
+
+.footer_info_politic {
+  width: 230px;
+  margin: 10px auto;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.footer_make {
+  grid-area: G;
+  justify-self: end;
+  align-self: end;
+  color: var(--color-text-main);
+  font-weight: 500;
+  font-size: 14px;
+}
