@@ -66,3 +66,32 @@
 .link_vk {
   background-image: url(../lib/images/vk_icon.png);
 }
+
+.main_why {
+  width: 90%;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.main_why_block {
+  width: 100%;
+}
+
+.main_why_block_title {
+  width: 80%;
+  text-align: center;
+  color: var(--color-text-main);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  margin: 0 auto 15px;
+}
+
+.main_why_block_text {
+  color: var(--color-text-main);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+}

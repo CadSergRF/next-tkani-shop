@@ -7,6 +7,8 @@
   --color-gray: #5b5b5b;
   --color-light-gray: #c5c6c6;
   --color-al-white: #ebecec;
+  --color-text-main: #000;
+  --color-text-secondary: #fff;
 }
 
 * {
