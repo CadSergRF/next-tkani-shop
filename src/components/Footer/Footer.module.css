@@ -1,8 +1,8 @@
 .footer {
   width: 73%;
   margin: 26px auto 0;
-  padding: 35px 10px;
-  background-color: var(--color-light-gray);
+  padding: 35px 10px 0;
+  background-color: var(--color-al-white);
   display: grid;
   gap: 10px;
   grid-template-areas:
