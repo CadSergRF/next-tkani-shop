@@ -29,3 +29,11 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.main_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100svh;
+}

@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ru">
       <body className={montserrat.className}>
         <Header />
-        <main>{children}</main>
+        <main className="main_container">{children}</main>
         <Footer />
       </body>
     </html>

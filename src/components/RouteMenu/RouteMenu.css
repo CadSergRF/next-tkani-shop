@@ -17,3 +17,9 @@
 .menu__item:hover {
   text-decoration: underline;
 }
+
+.menu__item_active {
+  font-weight: 700;
+  text-decoration: underline;
+  opacity: 0.7;
+}
