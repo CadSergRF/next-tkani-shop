@@ -1,25 +1,25 @@
 .menu {
-  width: fit-content;
-  display: flex;
-  justify-content: space-between;
-  gap: 25px;
-  list-style-type: none;
+	width: fit-content;
+	display: flex;
+	justify-content: space-between;
+	gap: 25px;
+	list-style-type: none;
 }
 
 .menu__item {
-  color: var(--color-text-main);
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 19px;
-  text-decoration: none;
+	color: var(--color-text-main);
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 19px;
+	text-decoration: none;
 }
 
 .menu__item:hover {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
 .menu__item_active {
-  font-weight: 700;
-  text-decoration: underline;
-  opacity: 0.7;
+	font-weight: 700;
+	text-decoration: underline;
+	opacity: 0.7;
 }

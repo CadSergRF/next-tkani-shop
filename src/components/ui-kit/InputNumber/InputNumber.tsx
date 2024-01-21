@@ -1,48 +1,54 @@
-'use client';
+"use client";
 
-import React, { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState } from "react";
 
-import styles from './InputNumber.module.css';
+import styles from "./InputNumber.module.css";
 
-type Props = {};
+const InputNumber = () => {
+	const [quantity, setQuantity] = useState<number>(0);
 
-const InputNumber = (props: Props) => {
-  const [value, setValue] = useState<number>(0);
+	const InputMinus = () => {
+		const toValue = Math.round((quantity - 0.1) * 10) / 10;
+		setQuantity(toValue);
+	};
 
-  const InputMinus = () => {
-    let toValue = Math.round((value - 0.1) * 10) / 10;
-    setValue(toValue);
-  };
+	const InputPlus = () => {
+		const toValue = Math.round((quantity + 0.1) * 10) / 10;
+		setQuantity(toValue);
+	};
 
-  const InputPlus = () => {
-    let toValue = Math.round((value + 0.1) * 10) / 10;
-    setValue(toValue);
-  };
+	const InputChange = (event: ChangeEvent<HTMLInputElement>) => {
+		const { value } = event.target;
+		const toValue = parseFloat(value).toFixed(2);
+		setQuantity(parseFloat(toValue));
+	};
 
-  const InputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const { value } = event.target;
-    let toValue = parseFloat(value).toFixed(2);
-    setValue(parseFloat(toValue));
-  };
-
-  return (
-    <div className={styles.input_number}>
-      <button className={styles.input_number_btn} onClick={InputMinus}>
-        -
-      </button>
-      <input
-        className={styles.input_number_input}
-        type="number"
-        min={0}
-        step={0.1}
-        value={value}
-        onChange={InputChange}
-      />
-      <button className={styles.input_number_btn} onClick={InputPlus}>
-        +
-      </button>
-    </div>
-  );
+	return (
+		<div className={styles.input_number}>
+			<button
+				type="button"
+				className={styles.input_number_btn}
+				onClick={InputMinus}
+			>
+				-
+			</button>
+			<input
+				className={styles.input_number_input}
+				type="number"
+				min={0}
+				step={0.1}
+				value={quantity}
+				onChange={InputChange}
+			/>
+			<button
+				type="button"
+				className={styles.input_number_btn}
+				onClick={InputPlus}
+			>
+				+
+			</button>
+		</div>
+	);
 };
 
 export { InputNumber };

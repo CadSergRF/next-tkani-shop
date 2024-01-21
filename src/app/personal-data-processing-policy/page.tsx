@@ -5,10 +5,10 @@ export const metadata: Metadata = {
 	description: "Твои-Ткани - интернет-магазин тканей | Купить ткань",
 };
 
-export default function Katalog() {
+export default function PersonalDataProcessingPolicy() {
 	return (
 		<div>
-			<h2>Каталог</h2>
+			<h2>Политика обработки персональных данных</h2>
 		</div>
 	);
 }

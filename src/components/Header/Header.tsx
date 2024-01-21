@@ -1,41 +1,63 @@
-import React from 'react';
-import Image from 'next/image';
-import styles from './Header.module.css';
-import { RouteMenu } from '../RouteMenu/RouteMenu';
-import { SearchMain } from '../SearchMain/SearchMain';
-import { SubMenu } from '../SubMenu/SubMenu';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import clsx from "clsx";
 
-type Props = {};
+import { RouteMenu } from "../RouteMenu/RouteMenu";
+import { SearchMain } from "../SearchMain/SearchMain";
+import { SubMenu } from "../SubMenu/SubMenu";
 
-const Header = (props: Props) => {
-  return (
-    <header className={styles.header}>
-      <div className={styles.header__menu}>
-        <div className={styles.menu__container}>
-          <RouteMenu />
-          <div className={styles.menu__phone}>+7-923-490-6508</div>
-        </div>
-      </div>
-      <div className={styles.header__central}>
-        <Image
-          src="./images/icon-logo.svg"
-          width={300}
-          height={100}
-          alt="Логотип компании Твои ткани"
-        />
-        <SearchMain />
-        <div className={styles.cart_box}>
-          <div className={styles.cart_box__icons}>
-            <Image src="./images/icon-personal.svg" alt="Личный кабинет" width={27} height={27} />
-            <Image src="./images/icon-like.svg" alt="Избранное" width={27} height={27} />
-            <Image src="./images/icon-cart.svg" alt="Корзина товаров" width={27} height={27} />
-          </div>
-          <button className={styles.cart_box__btn}>Написать в Whats App</button>
-        </div>
-      </div>
-      <SubMenu />
-    </header>
-  );
-};
+import styles from "./Header.module.css";
+
+const Header = () => (
+	<header className={styles.header}>
+		<div className={styles.header__menu}>
+			<div className={styles.menu__container}>
+				<RouteMenu />
+				<div className={styles.menu__phone}>+7-923-490-6508</div>
+			</div>
+		</div>
+		<div className={styles.header__central}>
+			<Image
+				src="./images/icon-logo.svg"
+				width={300}
+				height={100}
+				alt="Логотип компании Твои ткани"
+			/>
+			<SearchMain />
+			<div className={styles.cart_box}>
+				<div className={styles.cart_box__icons}>
+					<Link
+						href="/personalaccount"
+						className={clsx(
+							styles.cart_box__link,
+							styles.cart_box_link_personal,
+						)}
+						target="blanc"
+					/>
+					<Link
+						href="/favourites"
+						className={clsx(
+							styles.cart_box__link,
+							styles.cart_box_link_favourites,
+						)}
+						target="blanc"
+					/>
+					<Link
+						href="/cart"
+						className={clsx(styles.cart_box__link, styles.cart_box_link_cart)}
+						target="blanc"
+					/>
+				</div>
+				<Link href="https://wa.me/79234906508?text=Добрый%день." target="blanc">
+					<button type="button" className={styles.cart_box__btn}>
+						Написать в Whats App
+					</button>
+				</Link>
+			</div>
+		</div>
+		<SubMenu />
+	</header>
+);
 
 export { Header };
