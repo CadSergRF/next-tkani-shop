@@ -13,7 +13,7 @@ export default function Home() {
 			<Banner />
 			<NewProduct />
 			<LastNews />
-			<Link href="/catalog" className={styles.main_link_container}>
+			<Link href="/katalog" className={styles.main_link_container}>
 				Перейти в каталог
 			</Link>
 			<div className={styles.main_social}>

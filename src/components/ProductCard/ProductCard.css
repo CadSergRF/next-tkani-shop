@@ -1,0 +1,11 @@
+.product_card {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.product_card_text_block {
+	border: 1px solid #000;
+	width: 100%;
+	padding: 15px 20px 15px 50px;
+}

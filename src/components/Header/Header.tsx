@@ -44,7 +44,7 @@ const Header = () => (
 						target="blanc"
 					/>
 					<Link
-						href="/cart"
+						href="/shoppingcart"
 						className={clsx(styles.cart_box__link, styles.cart_box_link_cart)}
 						target="blanc"
 					/>
