@@ -1,0 +1,44 @@
+.pc_companion_cards_block {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 35px 50px;
+	list-style-type: none;
+}
+
+.pc_companion__card {
+	width: 100%;
+}
+
+.pc_companion__card_image {
+	width: 100%;
+	height: 200px;
+}
+
+.pc_companion__card_info {
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.pc_companion__card_price_zone {
+	display: flex;
+	gap: 10px;
+	align-items: baseline;
+}
+
+.pc_companion__card_price {
+	color: var(--color-text-main);
+	font-weight: 700;
+	font-size: 24px;
+}
+
+.pc_companion__card_price_text {
+	color: var(--color-text-main);
+	font-weight: 700;
+	font-size: 14px;
+}
+
+.pc_companion__card_text {
+	color: var(--color-text-main);
+	font-weight: 500;
+	font-size: 13px;
+}

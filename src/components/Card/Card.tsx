@@ -11,8 +11,7 @@ type Props = {
 	card: TCardLittle;
 };
 
-const Card = (props: Props) => {
-	const { card } = props;
+const Card = ({ card }: Props) => {
 	const { image, article, title, description, price, measure } = card;
 
 	return (

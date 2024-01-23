@@ -3,11 +3,16 @@ import { emptyImage } from "@/config/constants";
 
 import "./PcImagesBlock.css";
 import { PcImageCombination } from "./PcImageCombination/PcImageCombination";
+import { PcCompanion } from "../PcCompanion/PcCompanion";
+import { TCardLittle } from "@/Types/TCard";
+import { card_one } from "@/lib/FakeData/newProductFake";
 
 type Props = {
 	image?: string;
 	combination?: string[];
 };
+
+const cards: TCardLittle[] = [card_one, card_one, card_one, card_one];
 
 const PcImagesBlock = ({ image, combination }: Props) => {
 	const showImage = image ? image : emptyImage;
@@ -22,6 +27,7 @@ const PcImagesBlock = ({ image, combination }: Props) => {
 				style={{ objectFit: "contain" }}
 			/>
 			<PcImageCombination combination={combination} />
+			<PcCompanion cards={cards} />
 		</div>
 	);
 };

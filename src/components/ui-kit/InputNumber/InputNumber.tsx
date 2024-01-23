@@ -2,9 +2,14 @@
 
 import { ChangeEvent, useState } from "react";
 
-import styles from "./InputNumber.module.css";
+import "./InputNumber.css";
+import clsx from "clsx";
 
-const InputNumber = () => {
+type Props = {
+	large?: boolean;
+};
+
+const InputNumber = ({ large = false }: Props) => {
 	const [quantity, setQuantity] = useState<number>(0);
 
 	const InputMinus = () => {
@@ -24,16 +29,18 @@ const InputNumber = () => {
 	};
 
 	return (
-		<div className={styles.input_number}>
+		<div className={clsx("input_number", { input_number_large: large })}>
 			<button
 				type="button"
-				className={styles.input_number_btn}
+				className={clsx("input_number__btn", "input_number__btn_minus", {
+					input_number__btn_large: large,
+				})}
 				onClick={InputMinus}
-			>
-				-
-			</button>
+			/>
 			<input
-				className={styles.input_number_input}
+				className={clsx("input_number__input", {
+					input_number__input_large: large,
+				})}
 				type="number"
 				min={0}
 				step={0.1}
@@ -42,11 +49,11 @@ const InputNumber = () => {
 			/>
 			<button
 				type="button"
-				className={styles.input_number_btn}
+				className={clsx("input_number__btn", "input_number__btn_plus", {
+					input_number__btn_large: large,
+				})}
 				onClick={InputPlus}
-			>
-				+
-			</button>
+			/>
 		</div>
 	);
 };

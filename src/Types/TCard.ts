@@ -28,6 +28,7 @@ export type TCardFull = {
 	price: number; // Цена за единицу
 	oldPrice?: number; // "Старая цена" - для акций
 	quantity?: number; // Количество, остаток
+	measure?: string; // Единица измерения
 	image?: string; // Изображение товара
 	combination?: string[]; // Дополнительные фото товара
 	description?: string; // Описание товара

@@ -10,9 +10,5 @@ export const metadata: Metadata = {
 };
 
 export default function Katalog() {
-	return (
-		<section>
-			<ProductCard card={card_product} />
-		</section>
-	);
+	return <ProductCard card={card_product} />;
 }

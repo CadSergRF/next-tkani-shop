@@ -1,0 +1,19 @@
+.pc_companion_block {
+	min-width: 100%;
+	margin-top: 40px;
+	padding: 0 15px;
+}
+
+.pc_companion_title {
+	color: var(--color-text-main);
+	font-weight: 600;
+	font-size: 22px;
+	margin-bottom: 12px;
+}
+
+.pc_companion_text {
+	color: var(--color-text-main);
+	font-weight: 400;
+	font-size: 11px;
+	margin-bottom: 24px;
+}

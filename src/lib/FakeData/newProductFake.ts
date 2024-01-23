@@ -19,6 +19,7 @@ export const card_product = {
 	price: 350,
 	oldPrice: 420,
 	quantity: 5.8,
+	measure: "м.п.",
 	image: "/images/fake/raketa.jpg",
 	combination: [
 		"/images/fake/raketa.jpg",
