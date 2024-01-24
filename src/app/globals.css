@@ -30,6 +30,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	align-items: center;
 	min-height: 100svh;
 }
 
@@ -38,6 +39,7 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+	width: 73%;
 }
 
 .mar_top {

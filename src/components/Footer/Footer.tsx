@@ -13,7 +13,7 @@ const Footer = () => (
 			<nav className={styles.footer_nav_block}>
 				<ul className={styles.footer_nav_link_list}>
 					<li>
-						<Link href="/aboutcompany" className={styles.footer_nav_link}>
+						<Link href="/about-company" className={styles.footer_nav_link}>
 							О интернет-магазине
 						</Link>
 					</li>

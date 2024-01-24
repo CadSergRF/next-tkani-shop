@@ -29,12 +29,11 @@ const Header = () => (
 			<div className={styles.cart_box}>
 				<div className={styles.cart_box__icons}>
 					<Link
-						href="/personalaccount"
+						href="/personal-account"
 						className={clsx(
 							styles.cart_box__link,
 							styles.cart_box_link_personal,
 						)}
-						target="blanc"
 					/>
 					<Link
 						href="/favourites"
@@ -42,12 +41,10 @@ const Header = () => (
 							styles.cart_box__link,
 							styles.cart_box_link_favourites,
 						)}
-						target="blanc"
 					/>
 					<Link
-						href="/shoppingcart"
+						href="/shopping-cart"
 						className={clsx(styles.cart_box__link, styles.cart_box_link_cart)}
-						target="blanc"
 					/>
 				</div>
 				<WriteSocialBtn

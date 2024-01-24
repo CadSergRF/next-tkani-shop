@@ -25,7 +25,7 @@ const RouteMenu = () => {
 				</li>
 				<li>
 					<Link
-						href="/aboutcompany"
+						href="/about-company"
 						className={clsx("menu__item", {
 							menu__item_active: pathname === "/aboutcompany",
 						})}

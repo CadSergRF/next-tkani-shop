@@ -1,0 +1,14 @@
+.personal_menu {
+	list-style-type: none;
+}
+
+.personal_menu__item {
+	color: var(--color-text-main);
+	font-weight: 500;
+	font-size: 14px;
+	text-decoration: none;
+}
+
+.personal_menu__item_active {
+	text-decoration: underline;
+}

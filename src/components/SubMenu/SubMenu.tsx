@@ -40,7 +40,7 @@ const SubMenu = () => {
 				</li>
 				<li className="sub_menu__item">
 					<Link
-						href="/giftcertificate"
+						href="/gift-certificate"
 						className={clsx("sub_menu__item", {
 							sub_menu__item_active: pathname === "/giftcertificate",
 						})}
