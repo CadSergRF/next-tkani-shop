@@ -83,21 +83,3 @@
 .cart_box_link_cart {
 	background-image: url(../../lib/images/icon-cart.svg);
 }
-
-.cart_box__btn {
-	background-color: var(--color-blue);
-	border: none;
-	border-radius: 5px;
-	padding: 6px 14px;
-	color: #fff;
-	font-weight: 600;
-	font-size: 14px;
-	cursor: pointer;
-}
-
-.cart_box__btn:active {
-	outline: none;
-	box-shadow:
-		inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-		inset 2px 2px 3px rgba(0, 0, 0, 0.6);
-}

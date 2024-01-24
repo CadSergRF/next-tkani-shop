@@ -53,6 +53,10 @@
 	margin-bottom: 20px;
 }
 
+.product_card__text_info {
+	margin-bottom: 25px;
+}
+
 .product_card__text_subtitle {
 	color: var(--color-text-main);
 	font-weight: 600;
@@ -65,4 +69,11 @@
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 1.4;
+	white-space: break-lines;
+}
+
+.product_card__text_write_social_btn {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }

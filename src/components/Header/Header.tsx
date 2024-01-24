@@ -8,6 +8,7 @@ import { SearchMain } from "../SearchMain/SearchMain";
 import { SubMenu } from "../SubMenu/SubMenu";
 
 import styles from "./Header.module.css";
+import { WriteSocialBtn } from "../ui-kit/WriteSocialBtn/WriteSocialBtn";
 
 const Header = () => (
 	<header className={styles.header}>
@@ -49,11 +50,11 @@ const Header = () => (
 						target="blanc"
 					/>
 				</div>
-				<Link href="https://wa.me/79234906508?text=Добрый%день." target="blanc">
-					<button type="button" className={styles.cart_box__btn}>
-						Написать в Whats App
-					</button>
-				</Link>
+				<WriteSocialBtn
+					link="https://wa.me/79234906508?text=Добрый%день."
+					text="Написать в WhatsApp"
+					color="blue"
+				/>
 			</div>
 		</div>
 		<SubMenu />

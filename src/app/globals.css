@@ -3,6 +3,8 @@
 	--color-secondary: #bf196e;
 	--color-light-pink: #f9d8e9;
 	--color-blue: #0a94cd;
+	--color-blue-secondary: #597da3;
+	--color-green: #43d854;
 	--color-light-blue: #add0e7;
 	--color-gray: #5b5b5b;
 	--color-light-gray: #c5c6c6;
@@ -36,4 +38,12 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+}
+
+.mar_top {
+	margin-top: 25px;
+}
+
+.mar_null {
+	margin: 0;
 }

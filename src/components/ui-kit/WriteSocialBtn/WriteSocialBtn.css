@@ -1,0 +1,24 @@
+.write_social__btn {
+	border: none;
+	border-radius: 5px;
+	padding: 6px 14px;
+	color: var(--color-text-secondary);
+	font-weight: 600;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.write_social__btn:active {
+	outline: none;
+	box-shadow:
+		inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+		inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.write_social__btn_color_blue {
+	background-color: var(--color-blue);
+}
+
+.write_social__btn_color_green {
+	background-color: var(--color-green);
+}

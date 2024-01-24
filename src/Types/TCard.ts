@@ -32,7 +32,6 @@ export type TCardFull = {
 	image?: string; // Изображение товара
 	combination?: string[]; // Дополнительные фото товара
 	description?: string; // Описание товара
-	care?: string;
 	recommended?: TCardLittle[];
 	characteristic: TCharacteristic;
 	seoTags: TSEO;

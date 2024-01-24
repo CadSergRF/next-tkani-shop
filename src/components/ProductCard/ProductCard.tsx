@@ -4,6 +4,9 @@ import "./ProductCard.css";
 import Image from "next/image";
 import { PcImagesBlock } from "./PcImagesBlock/PcImagesBlock";
 import { AddToCart } from "../Forms/AddToCart/AddToCart";
+import { returnRules, sendingRules } from "@/config/constants";
+import { WriteSocialBtn } from "../ui-kit/WriteSocialBtn/WriteSocialBtn";
+import clsx from "clsx";
 
 type Props = {
 	card: TCardFull;
@@ -20,7 +23,6 @@ const ProductCard = ({ card }: Props) => {
 		image,
 		combination,
 		description,
-		care,
 		characteristic,
 		seoTags,
 	} = card;
@@ -48,12 +50,51 @@ const ProductCard = ({ card }: Props) => {
 					<p className="product_card__text_primary">{`Плотность: ${weight}`}</p>
 					<p className="product_card__text_primary">{`Производитель: ${countryOfOrigin}`}</p>
 				</div>
-				<div>
-					<h3 className="product_card__text_subtitle">Описание товара</h3>
+				<div className="product_card__text_info">
+					<h3 className="product_card__text_subtitle">Описание товара:</h3>
 					<p className="product_card__text_description">{description}</p>
 				</div>
+				<div className="product_card__text_info">
+					<h3 className="product_card__text_subtitle">
+						Сроки отправки и возврат:
+					</h3>
+					<p className="product_card__text_description">{sendingRules}</p>
+					<p className="product_card__text_description mar_top">
+						{returnRules}
+					</p>
+				</div>
+				<div className="product_card__text_info">
+					<h3 className="product_card__text_subtitle">
+						Рекомендации по уходу:
+					</h3>
+					<p className="product_card__text_description">
+						Стирка при температуре до 40 град.
+					</p>
+					<p className="product_card__text_description">Не отбеливать.</p>
+					<p className="product_card__text_description">Усадка ткани - 5%.</p>
+					<p className="product_card__text_description mar_top">
+						Перед пошивом рекомендуем провести принудительную декатировку ткани.
+					</p>
+				</div>
+				<div className="product_card__text_info">
+					<h3 className={clsx("product_card__text_subtitle", "mar_null")}>
+						Есть вопросы о товаре?
+					</h3>
+					<h3 className="product_card__text_subtitle">Напишите нам:</h3>
+					<div className="product_card__text_write_social_btn">
+						<WriteSocialBtn
+							link="https://vk.com/tvoi_tkani"
+							text="Написать в Вконтакте"
+							color="blue"
+						/>
+						<WriteSocialBtn
+							link="https://wa.me/79234906508?text=Добрый%день."
+							text="Написать в WhatsApp"
+							color="green"
+						/>
+					</div>
+				</div>
 			</div>
-			ProductCard
 		</div>
 	);
 };
