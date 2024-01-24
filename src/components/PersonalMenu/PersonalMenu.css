@@ -1,5 +1,8 @@
 .personal_menu {
 	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	gap: 19px;
 }
 
 .personal_menu__item {
