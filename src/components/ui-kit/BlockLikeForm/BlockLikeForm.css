@@ -1,0 +1,17 @@
+.block-like-form__container {
+	width: 100%;
+	border-bottom: 1px solid var(--color-text-main);
+}
+
+.block-like-form__title {
+	color: var(--color-text-main);
+	font-weight: 500;
+	font-size: 7px;
+}
+
+.block-like-form__text {
+	color: var(--color-text-main);
+	font-weight: 500;
+	font-size: 9px;
+	line-height: 2.5;
+}

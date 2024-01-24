@@ -1,0 +1,35 @@
+.personal-data {
+	padding-left: 45px;
+	min-width: 400px;
+}
+
+.personal-data__title {
+	color: var(--color-text-main);
+	font-weight: 700;
+	font-size: 24px;
+}
+
+.personal-data_data {
+	width: 100%;
+	margin-top: 27px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.personal-data__consentNewsletter {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.personal-data__consentNewsletter_box {
+	width: 10px;
+	height: 10px;
+}
+
+.personal-data__consentNewsletter_label {
+	color: var(--color-text-main);
+	font-weight: 500;
+	font-size: 8px;
+}
