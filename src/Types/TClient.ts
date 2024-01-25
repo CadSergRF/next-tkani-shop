@@ -3,6 +3,7 @@ export type TPersonalData = {
 	phoneNumber: string;
 	birthday?: string;
 	eMail: string;
+	clientCard?: string;
 };
 
 export type TPersonalDeliveryAddress = {

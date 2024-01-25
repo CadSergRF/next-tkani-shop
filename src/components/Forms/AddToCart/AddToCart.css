@@ -23,6 +23,7 @@
 	background-color: var(--color-secondary);
 	width: 130px;
 	height: 30px;
+	font-family: inherit;
 	font-weight: 600;
 	font-size: 14px;
 	color: var(--color-text-secondary);
