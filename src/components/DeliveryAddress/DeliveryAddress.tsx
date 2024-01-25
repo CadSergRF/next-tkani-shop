@@ -41,8 +41,8 @@ const DeliveryAddress = ({ deliveryAddress, consentAddress }: Props) => {
 				</p>
 			</article>
 			<div className="delivery-address__btn-block">
-				<ChangeDataBtn text="Изменить" />
-				<ChangeDataBtn text="Удалить" />
+				<ChangeDataBtn text="Изменить" color="gray" />
+				<ChangeDataBtn text="Удалить" color="gray" />
 			</div>
 		</>
 	);
