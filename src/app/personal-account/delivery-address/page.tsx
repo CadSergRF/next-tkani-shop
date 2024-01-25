@@ -1,9 +1,24 @@
-import React from "react";
+import { Metadata } from "next";
 
-type Props = {};
+import { DeliveryAddress } from "@/components/DeliveryAddress/DeliveryAddress";
 
-const page = (props: Props) => {
-	return <div>Адрес доставки</div>;
+import { fakeUserDeliveryAddress } from "@/lib/FakeData/FakeUser";
+
+import "./DeliveryAddress.css";
+
+export const metadata: Metadata = {
+	title:
+		"Адрес доставки | Личный кабинет | Твои-Ткани - интернет-магазин тканей",
 };
 
-export default page;
+export default function DeliveryAddressPage() {
+	return (
+		<section className="delivery-address">
+			<h2 className="delivery-address__title">Адрес доставки</h2>
+			<DeliveryAddress
+				deliveryAddress={fakeUserDeliveryAddress}
+				consentAddress={true}
+			/>
+		</section>
+	);
+}

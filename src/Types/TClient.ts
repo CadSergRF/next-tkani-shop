@@ -4,3 +4,12 @@ export type TPersonalData = {
 	birthday?: string;
 	eMail: string;
 };
+
+export type TPersonalDeliveryAddress = {
+	town?: string;
+	streetHome?: string;
+	apartment?: string;
+	floor?: string;
+	entrance?: string;
+	intercom?: string;
+};

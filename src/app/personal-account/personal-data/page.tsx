@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 
-import { BlockLikeForm } from "@/components/ui-kit/BlockLikeForm/BlockLikeForm";
+import { PersonalData } from "@/components/PersonalData/PersonalData";
+
+import { fakeUser } from "@/lib/FakeData/FakeUser";
 
 import "./personalData.css";
-import { PersonalData } from "@/components/PersonalData/PersonalData";
-import { fakeUser } from "@/lib/FakeData/FakeUser";
 
 export const metadata: Metadata = {
 	title:

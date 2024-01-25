@@ -1,0 +1,10 @@
+.delivery-address {
+	padding-left: 45px;
+	min-width: 400px;
+}
+
+.delivery-address__title {
+	color: var(--color-text-main);
+	font-weight: 700;
+	font-size: 24px;
+}
