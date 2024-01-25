@@ -1,0 +1,19 @@
+.change-data-btn {
+	padding: 10px 13px;
+	display: block;
+	border: none;
+	cursor: pointer;
+	margin: 16px 0;
+	background-color: var(--color-gray);
+	border-radius: 5px;
+	color: var(--color-text-secondary);
+	font-weight: 500;
+	font-size: 14px;
+}
+
+.change-data-btn:active {
+	outline: none;
+	box-shadow:
+		inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+		inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
