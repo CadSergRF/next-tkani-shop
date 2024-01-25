@@ -17,3 +17,18 @@
 		inset -2px -2px 3px rgba(255, 255, 255, 0.6),
 		inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
+
+.change-data-btn_gray {
+	background-color: var(--color-gray);
+}
+
+.change-data-btn_blue {
+	background-color: var(--color-blue);
+}
+
+.change-data-btn_size-little {
+	padding: 5px 13px;
+	width: 100%;
+	font-weight: 600;
+	font-size: 12px;
+}

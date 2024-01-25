@@ -31,8 +31,8 @@ const PersonalData = ({ personalData, consentNewsletter }: Props) => {
 				</p>
 			</article>
 			<div className="personal-data__btn-block">
-				<ChangeDataBtn text="Изменить пароль" />
-				<ChangeDataBtn text="Изменить личные данные" />
+				<ChangeDataBtn text="Изменить пароль" color="gray" />
+				<ChangeDataBtn text="Изменить личные данные" color="gray" />
 			</div>
 		</>
 	);

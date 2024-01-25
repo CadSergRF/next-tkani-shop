@@ -1,0 +1,25 @@
+.all-my-orders {
+	width: 100%;
+	margin-top: 50px;
+}
+
+.all-my-orders__pagination {
+	margin: 16px auto;
+	padding: 10px 13px;
+	display: block;
+	border: none;
+	cursor: pointer;
+	background-color: var(--color-blue);
+	border-radius: 5px;
+	color: var(--color-text-main);
+	font-family: inherit;
+	font-weight: 500;
+	font-size: 16px;
+}
+
+.all-my-orders__pagination:active {
+	outline: none;
+	box-shadow:
+		inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+		inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}

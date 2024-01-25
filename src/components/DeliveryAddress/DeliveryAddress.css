@@ -1,0 +1,37 @@
+.deliver-address_data {
+	width: 100%;
+	margin-top: 27px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.deliver-address__consentAddress {
+	color: var(--color-text-main);
+	font-weight: 500;
+	font-size: 8px;
+	padding-left: 10px;
+}
+
+.address__consentAddress_checked::before {
+	display: inline-flex;
+	content: " ";
+	background-image: url("../../lib/images/checkbox.svg");
+	background-size: 10px 10px;
+	height: 10px;
+	width: 10px;
+	margin-right: 5px;
+}
+
+.address__consentAddress__unchecked::before {
+	display: inline-flex;
+	content: " ";
+	background-image: url("../../lib/images/checkbox-unchecked.svg");
+	background-size: 10px 10px;
+	height: 10px;
+	width: 10px;
+}
+
+.delivery-address__btn-block {
+	margin-top: 10px;
+}
