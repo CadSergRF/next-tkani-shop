@@ -1,4 +1,4 @@
-.change-data-btn {
+.change_data_btn {
 	padding: 10px 13px;
 	display: block;
 	border: none;
@@ -12,22 +12,22 @@
 	font-size: 14px;
 }
 
-.change-data-btn:active {
+.change_data_btn:active {
 	outline: none;
 	box-shadow:
 		inset -2px -2px 3px rgba(255, 255, 255, 0.6),
 		inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
-.change-data-btn_gray {
+.change_data_btn__gray {
 	background-color: var(--color-gray);
 }
 
-.change-data-btn_blue {
+.change_data_btn__blue {
 	background-color: var(--color-blue);
 }
 
-.change-data-btn_size-little {
+.change_data_btn__size_little {
 	padding: 5px 13px;
 	width: 100%;
 	font-weight: 600;

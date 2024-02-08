@@ -1,13 +1,13 @@
 "use client";
 
 import React, { FormEvent } from "react";
+import clsx from "clsx";
 
 import { TCardFull, TCardLittle } from "@/Types/TCard";
 
 import { InputNumber } from "@/components/ui-kit/InputNumber/InputNumber";
 
-import "./AddToCart.css";
-import clsx from "clsx";
+import styles from "./AddToCart.module.css";
 
 type Props = {
 	card: TCardLittle | TCardFull;
@@ -32,22 +32,24 @@ const AddToCart = ({
 
 	return (
 		<form
-			className={clsx("add_to_cart", {
-				add_to_cart__row_reverse: !column && reverse,
-				add_to_cart__column: column && !reverse,
-				add_to_cart__column_reverse: column && reverse,
+			className={clsx(styles.add_to_cart, {
+				[styles.add_to_cart__row_reverse]: !column && reverse,
+				[styles.add_to_cart__column]: column && !reverse,
+				[styles.add_to_cart__column_reverse]: column && reverse,
 			})}
 			onSubmit={handleAddToCart}
 		>
 			<button
 				type="submit"
-				className={clsx("add_to_cart__btn", { add_to_card__btn_large: large })}
+				className={clsx(styles.add_to_cart__btn, {
+					[styles.add_to_card__btn_large]: large,
+				})}
 			>
 				В корзину
 			</button>
-			<div className="add_to_cart_choose">
+			<div className={styles.add_to_cart_choose}>
 				<InputNumber large={large} />
-				<p className="add_to_cart_text">{measure}</p>
+				<p className={styles.add_to_cart_text}>{measure}</p>
 			</div>
 		</form>
 	);

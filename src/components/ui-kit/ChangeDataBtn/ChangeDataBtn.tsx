@@ -1,5 +1,6 @@
 import clsx from "clsx";
-import "./ChangeDataBtn.css";
+
+import styles from "./ChangeDataBtn.module.css";
 
 type Props = {
 	text: string;
@@ -11,10 +12,10 @@ const ChangeDataBtn = ({ text, color, size = "medium" }: Props) => {
 	return (
 		<button
 			type="button"
-			className={clsx("change-data-btn", {
-				"change-data-btn_blue": color === "blue",
-				"change-data-btn_gray": color === "gray",
-				"change-data-btn_size-little": size === "little",
+			className={clsx(styles.change_data_btn, {
+				[styles.change_data_btn__blue]: color === "blue",
+				[styles.change_data_btn__gray]: color === "gray",
+				[styles.change_data_btn__size_little]: size === "little",
 			})}
 		>
 			{text}

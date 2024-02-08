@@ -1,23 +1,22 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
-import "./RouteMenu.css";
+import styles from "./RouteMenu.module.css";
 
 const RouteMenu = () => {
 	const pathname = usePathname();
 
 	return (
 		<nav>
-			<ul className="menu">
+			<ul className={styles.menu}>
 				<li>
 					<Link
 						href="/"
-						className={clsx("menu__item", {
-							menu__item_active: pathname === "/",
+						className={clsx(styles.menu__item, {
+							[styles.menu__item_active]: pathname === "/",
 						})}
 					>
 						Главная
@@ -26,8 +25,8 @@ const RouteMenu = () => {
 				<li>
 					<Link
 						href="/about-company"
-						className={clsx("menu__item", {
-							menu__item_active: pathname === "/aboutcompany",
+						className={clsx(styles.menu__item, {
+							[styles.menu__item_active]: pathname === "/aboutcompany",
 						})}
 					>
 						О компании
@@ -36,8 +35,8 @@ const RouteMenu = () => {
 				<li>
 					<Link
 						href="/qa"
-						className={clsx("menu__item", {
-							menu__item_active: pathname === "/qa",
+						className={clsx(styles.menu__item, {
+							[styles.menu__item_active]: pathname === "/qa",
 						})}
 					>
 						Вопрос-Ответ
@@ -46,8 +45,8 @@ const RouteMenu = () => {
 				<li>
 					<Link
 						href="/news"
-						className={clsx("menu__item", {
-							menu__item_active: pathname === "/news",
+						className={clsx(styles.menu__item, {
+							[styles.menu__item_active]: pathname === "/news",
 						})}
 					>
 						Новости
@@ -56,8 +55,8 @@ const RouteMenu = () => {
 				<li>
 					<Link
 						href="/contacts"
-						className={clsx("menu__item", {
-							menu__item_active: pathname === "/contacts",
+						className={clsx(styles.menu__item, {
+							[styles.menu__item_active]: pathname === "/contacts",
 						})}
 					>
 						Контакты
@@ -66,8 +65,8 @@ const RouteMenu = () => {
 				<li>
 					<Link
 						href="/wholesalers"
-						className={clsx("menu__item", {
-							menu__item_active: pathname === "/wholesalers",
+						className={clsx(styles.menu__item, {
+							[styles.menu__item_active]: pathname === "/wholesalers",
 						})}
 					>
 						Оптовикам

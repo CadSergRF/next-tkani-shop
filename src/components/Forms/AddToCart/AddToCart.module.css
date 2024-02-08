@@ -1,37 +1,62 @@
 .add_to_cart {
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 
-.add_to_cart_btn {
-  border: none;
-  border-radius: 6px;
-  background-color: var(--color-secondary);
-  width: 130px;
-  height: 30px;
-  font-weight: 600;
-  font-size: 14px;
-  color: #fff;
-  cursor: pointer;
-  transition: opacity 0.2s ease-in-out;
+.add_to_cart__row_reverse {
+	flex-direction: row-reverse;
+}
+
+.add_to_cart__column {
+	flex-direction: column;
+	gap: 10px;
+}
+
+.add_to_cart__column_reverse {
+	flex-direction: column-reverse;
+	gap: 10px;
+}
+
+.add_to_cart__btn {
+	border: none;
+	border-radius: 6px;
+	background-color: var(--color-secondary);
+	width: 130px;
+	height: 30px;
+	font-family: var(--var-font-main);
+	font-weight: 600;
+	font-size: 14px;
+	color: var(--color-text-secondary);
+	cursor: pointer;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.add_to_card__btn_large {
+	border-radius: 12px;
+	width: 187px;
+	height: 47px;
+	font-weight: 600;
+	font-size: 19px;
 }
 
 .add_to_cart_btn:hover {
-  opacity: 0.8;
+	opacity: 0.8;
 }
 
 .add_to_cart_btn:active {
-  outline: none;
-  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+	outline: none;
+	box-shadow:
+		inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+		inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
 .add_to_cart_choose {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
 }
 
 .add_to_cart_text {
-  font-weight: 400;
-  font-size: 12px;
+	font-weight: 400;
+	font-size: 12px;
 }

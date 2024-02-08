@@ -5,7 +5,7 @@ import { TPersonalDeliveryAddress } from "@/Types/TClient";
 import { BlockLikeForm } from "../ui-kit/BlockLikeForm/BlockLikeForm";
 import { ChangeDataBtn } from "../ui-kit/ChangeDataBtn/ChangeDataBtn";
 
-import "./DeliveryAddress.css";
+import styles from "./DeliveryAddress.module.css";
 
 type Props = {
 	deliveryAddress: TPersonalDeliveryAddress;
@@ -24,7 +24,7 @@ const DeliveryAddress = ({ deliveryAddress, consentAddress }: Props) => {
 
 	return (
 		<>
-			<article className="deliver-address_data">
+			<section className={styles.deliver_address__data}>
 				<BlockLikeForm title="Населенный пункт" text={town} />
 				<BlockLikeForm title="Улица и номер дома" text={streetHome} />
 				<BlockLikeForm title="Номер квартиры" text={apartment} />
@@ -32,15 +32,15 @@ const DeliveryAddress = ({ deliveryAddress, consentAddress }: Props) => {
 				<BlockLikeForm title="Подъезд" text={entrance} />
 				<BlockLikeForm title="Домофон" text={intercom} />
 				<p
-					className={clsx("deliver-address__consentAddress", {
-						address__consentAddress_checked: consentAddress,
-						address__consentAddress_unchecked: !consentAddress,
+					className={clsx([styles.deliver_address__consentAddress], {
+						[styles.address__consentAddress_checked]: consentAddress,
+						[styles.address__consentAddress_unchecked]: !consentAddress,
 					})}
 				>
 					Использовать адрес по умолчанию
 				</p>
-			</article>
-			<div className="delivery-address__btn-block">
+			</section>
+			<div className={styles.delivery_address__btn_block}>
 				<ChangeDataBtn text="Изменить" color="gray" />
 				<ChangeDataBtn text="Удалить" color="gray" />
 			</div>

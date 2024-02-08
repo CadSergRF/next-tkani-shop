@@ -4,55 +4,61 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
-import "./SubMenu.css";
+import styles from "./SubMenu.module.css";
 
 const SubMenu = () => {
 	const pathname = usePathname();
 
 	return (
-		<nav className="header_submenu">
-			<ul className="sub_menu">
-				<li className="sub_menu__item">
+		<nav className={styles.header_submenu}>
+			<ul className={styles.sub_menu}>
+				<li className={styles.sub_menu__item}>
 					<Link
 						href="/katalog"
-						className={clsx("sub_menu__item_btn", "sub_menu__item_btn_blue")}
+						className={clsx(
+							styles.sub_menu__item_btn,
+							styles.sub_menu__item_btn_blue,
+						)}
 					>
 						Каталог
 					</Link>
 				</li>
-				<li className="sub_menu__item">
+				<li className={styles.sub_menu__item}>
 					<Link
 						href="/katalog"
-						className={clsx("sub_menu__item_btn", "sub_menu__item_btn_pink")}
+						className={clsx(
+							styles.sub_menu__item_btn,
+							styles.sub_menu__item_btn_pink,
+						)}
 					>
 						Акции
 					</Link>
 				</li>
-				<li className="sub_menu__item">
+				<li className={styles.sub_menu__item}>
 					<Link
 						href="/qa"
-						className={clsx("sub_menu__item", {
-							sub_menu__item_active: pathname === "/qa",
+						className={clsx(styles.sub_menu__item, {
+							[styles.sub_menu__item_active]: pathname === "/qa",
 						})}
 					>
 						Оформление заказа
 					</Link>
 				</li>
-				<li className="sub_menu__item">
+				<li className={styles.sub_menu__item}>
 					<Link
 						href="/gift-certificate"
-						className={clsx("sub_menu__item", {
-							sub_menu__item_active: pathname === "/giftcertificate",
+						className={clsx(styles.sub_menu__item, {
+							[styles.sub_menu__item_active]: pathname === "/gift-certificate",
 						})}
 					>
 						Подарочные сертификаты
 					</Link>
 				</li>
-				<li className="sub_menu__item">
+				<li className={styles.sub_menu__item}>
 					<Link
 						href="/wholesalers"
-						className={clsx("sub_menu__item", {
-							sub_menu__item_active: pathname === "/wholesalers",
+						className={clsx(styles.sub_menu__item, {
+							[styles.sub_menu__item_active]: pathname === "/wholesalers",
 						})}
 					>
 						Оптовикам

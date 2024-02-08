@@ -2,21 +2,20 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
 import clsx from "clsx";
 
-import "./PersonalMenu.css";
+import styles from "./PersonalMenu.module.css";
 
 const PersonalMenu = () => {
 	const pathname = usePathname();
 
 	return (
-		<ul className="personal_menu">
+		<ul className={styles.personal_menu}>
 			<li>
 				<Link
 					href="/personal-account/personal-data"
-					className={clsx("personal_menu__item", {
-						personal_menu__item_active:
+					className={clsx(styles.personal_menu__item, {
+						[styles.personal_menu__item_active]:
 							pathname === "/personal-account/personal-data",
 					})}
 				>
@@ -26,8 +25,9 @@ const PersonalMenu = () => {
 			<li>
 				<Link
 					href="/personal-account/cart"
-					className={clsx("personal_menu__item", {
-						personal_menu__item_active: pathname === "/personal-account/cart",
+					className={clsx(styles.personal_menu__item, {
+						[styles.personal_menu__item_active]:
+							pathname === "/personal-account/cart",
 					})}
 				>
 					Корзина
@@ -36,8 +36,8 @@ const PersonalMenu = () => {
 			<li>
 				<Link
 					href="/personal-account/favourites"
-					className={clsx("personal_menu__item", {
-						personal_menu__item_active:
+					className={clsx(styles.personal_menu__item, {
+						[styles.personal_menu__item_active]:
 							pathname === "/personal-account/favourites",
 					})}
 				>
@@ -47,8 +47,8 @@ const PersonalMenu = () => {
 			<li>
 				<Link
 					href="/personal-account/my-orders"
-					className={clsx("personal_menu__item", {
-						personal_menu__item_active:
+					className={clsx(styles.personal_menu__item, {
+						[styles.personal_menu__item_active]:
 							pathname === "/personal-account/my-orders",
 					})}
 				>
@@ -58,8 +58,8 @@ const PersonalMenu = () => {
 			<li>
 				<Link
 					href="/personal-account/delivery-address"
-					className={clsx("personal_menu__item", {
-						personal_menu__item_active:
+					className={clsx(styles.personal_menu__item, {
+						[styles.personal_menu__item_active]:
 							pathname === "/personal-account/delivery-address",
 					})}
 				>
@@ -69,8 +69,8 @@ const PersonalMenu = () => {
 			<li>
 				<Link
 					href="/personal-account/client-card"
-					className={clsx("personal_menu__item", {
-						personal_menu__item_active:
+					className={clsx(styles.personal_menu__item, {
+						[styles.personal_menu__item_active]:
 							pathname === "/personal-account/client-card",
 					})}
 				>
@@ -80,8 +80,8 @@ const PersonalMenu = () => {
 			<li>
 				<Link
 					href="/personal-account/balance"
-					className={clsx("personal_menu__item", {
-						personal_menu__item_active:
+					className={clsx(styles.personal_menu__item, {
+						[styles.personal_menu__item_active]:
 							pathname === "/personal-account/balance",
 					})}
 				>
