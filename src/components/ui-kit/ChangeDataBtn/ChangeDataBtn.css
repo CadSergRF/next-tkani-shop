@@ -7,7 +7,7 @@
 	background-color: var(--color-gray);
 	border-radius: 5px;
 	color: var(--color-text-secondary);
-	font-family: inherit;
+	font-family: var(--var-font-main);
 	font-weight: 500;
 	font-size: 14px;
 }

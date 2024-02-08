@@ -12,6 +12,7 @@ const montserrat = Montserrat({
 	style: ["normal"],
 	subsets: ["cyrillic"],
 	display: "swap",
+	variable: "--var-font-main",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="ru">
-			<body className={clsx(montserrat.className, "body_container")}>
+			<body className={clsx(montserrat.variable, "body_container")}>
 				<Header />
 				<main className="main_container">{children}</main>
 				<Footer />

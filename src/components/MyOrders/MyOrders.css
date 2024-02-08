@@ -12,7 +12,7 @@
 	background-color: var(--color-blue);
 	border-radius: 5px;
 	color: var(--color-text-main);
-	font-family: inherit;
+	font-family: var(--var-font-main);
 	font-weight: 500;
 	font-size: 16px;
 }
