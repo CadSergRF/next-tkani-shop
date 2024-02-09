@@ -4,7 +4,7 @@ import { emptyImage } from "@/config/constants";
 import "./PcImagesBlock.css";
 import { PcImageCombination } from "./PcImageCombination/PcImageCombination";
 import { PcCompanion } from "../PcCompanion/PcCompanion";
-import { TCardLittle } from "@/Types/TCard";
+import { TCardMainInfo } from "@/Types/TCard";
 import { card_one } from "@/lib/FakeData/FakeProduct/newProductFake";
 
 type Props = {
@@ -12,7 +12,7 @@ type Props = {
 	combination?: string[];
 };
 
-const cards: TCardLittle[] = [card_one, card_one, card_one, card_one];
+const cards: TCardMainInfo[] = [card_one, card_one, card_one, card_one];
 
 const PcImagesBlock = ({ image, combination }: Props) => {
 	const showImage = image ? image : emptyImage;

@@ -5,7 +5,7 @@ export const card_rek = [
 		title: "Сатин акулы",
 		price: 310,
 		measure: "м.п.",
-		image: "./images/fake/k-ak-2.jpg",
+		image: "/images/fake/k-ak-2.jpg",
 		description: "100% хлопок",
 	},
 	{
@@ -14,7 +14,7 @@ export const card_rek = [
 		title: "Сатин зайцы",
 		price: 340,
 		measure: "м.п.",
-		image: "./images/fake/k-zc-12.jpg",
+		image: "/images/fake/k-zc-12.jpg",
 		description: "100% хлопок",
 	},
 	{
@@ -23,7 +23,7 @@ export const card_rek = [
 		title: "Сатин листики",
 		price: 350,
 		measure: "м.п.",
-		image: "./images/fake/satin.jpg",
+		image: "/images/fake/satin.jpg",
 		description: "100% хлопок",
 	},
 ];

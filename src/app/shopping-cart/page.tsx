@@ -1,4 +1,4 @@
-import ShoppingCart from "@/components/ShoppingCart/ShoppingCart";
+import ShoppingCart from "@/components/Forms/ShoppingCart/ShoppingCart";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
