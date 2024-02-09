@@ -1,33 +1,23 @@
-"use client";
-
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent } from "react";
 import clsx from "clsx";
 
 import styles from "./InputNumber.module.css";
 
 type Props = {
 	large?: boolean;
+	quantity: number;
+	InputMinus: () => void;
+	InputPlus: () => void;
+	InputChange: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
-const InputNumber = ({ large = false }: Props) => {
-	const [quantity, setQuantity] = useState<number>(0);
-
-	const InputMinus = () => {
-		const toValue = Math.round((quantity - 0.1) * 10) / 10;
-		setQuantity(toValue);
-	};
-
-	const InputPlus = () => {
-		const toValue = Math.round((quantity + 0.1) * 10) / 10;
-		setQuantity(toValue);
-	};
-
-	const InputChange = (event: ChangeEvent<HTMLInputElement>) => {
-		const { value } = event.target;
-		const toValue = parseFloat(value).toFixed(2);
-		setQuantity(parseFloat(toValue));
-	};
-
+const InputNumber = ({
+	large = false,
+	quantity = 0,
+	InputMinus,
+	InputPlus,
+	InputChange,
+}: Props) => {
 	return (
 		<div
 			className={clsx(styles.input_number, {

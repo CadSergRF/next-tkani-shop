@@ -5,7 +5,7 @@ import "./PcImagesBlock.css";
 import { PcImageCombination } from "./PcImageCombination/PcImageCombination";
 import { PcCompanion } from "../PcCompanion/PcCompanion";
 import { TCardLittle } from "@/Types/TCard";
-import { card_one } from "@/lib/FakeData/newProductFake";
+import { card_one } from "@/lib/FakeData/FakeProduct/newProductFake";
 
 type Props = {
 	image?: string;

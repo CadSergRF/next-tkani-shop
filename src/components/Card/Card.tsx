@@ -1,14 +1,14 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import clsx from "clsx";
 
-import { TCardLittle } from "@/Types/TCard";
+import { TCardMainInfo } from "@/Types/TCard";
 
 import { AddToCart } from "../Forms/AddToCart/AddToCart";
 
 import styles from "./Card.module.css";
 
 type Props = {
-	card: TCardLittle;
+	card: TCardMainInfo;
 };
 
 const Card = ({ card }: Props) => {

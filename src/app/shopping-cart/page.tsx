@@ -1,3 +1,4 @@
+import ShoppingCart from "@/components/ShoppingCart/ShoppingCart";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,6 +10,7 @@ export default function Cart() {
 	return (
 		<div>
 			<h2>Корзина товаров</h2>
+			<ShoppingCart />
 		</div>
 	);
 }

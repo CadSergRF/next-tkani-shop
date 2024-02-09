@@ -1,10 +1,10 @@
 import { create } from "zustand";
 
-import { TCardFull } from "@/Types/TCard";
+import { TCardFull, TCardMainInfo } from "@/Types/TCard";
 import { devtools, persist } from "zustand/middleware";
 
 type TOrderProduct = {
-	cartProduct: TCardFull;
+	cartProduct: TCardMainInfo;
 	orderQuantity: number;
 };
 
@@ -20,7 +20,7 @@ export const useCartStore = create<cartState>()(
 			(set, get) => ({
 				cart: [],
 				addToCart: (productToCart: TOrderProduct) =>
-					set((state) => {
+					set(() => {
 						const newCart = get().cart;
 						const findProduct = newCart.find(
 							(p) => p.cartProduct.id === productToCart.cartProduct.id,

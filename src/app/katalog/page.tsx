@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-import { card_product } from "@/lib/FakeData/newProductFake";
+import { card_product } from "@/lib/FakeData/FakeProduct/newProductFake";
 
 import { ProductCard } from "@/components/ProductCard/ProductCard";
 
