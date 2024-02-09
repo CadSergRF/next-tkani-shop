@@ -1,4 +1,5 @@
 export type TPersonalData = {
+	id: string;
 	fullName: string;
 	phoneNumber: string;
 	birthday?: string;
@@ -7,6 +8,7 @@ export type TPersonalData = {
 };
 
 export type TPersonalDeliveryAddress = {
+	postIndex?: number;
 	town?: string;
 	streetHome?: string;
 	apartment?: string;
@@ -14,3 +16,5 @@ export type TPersonalDeliveryAddress = {
 	entrance?: string;
 	intercom?: string;
 };
+
+export type TPersonalFullData = TPersonalData | TPersonalDeliveryAddress;
