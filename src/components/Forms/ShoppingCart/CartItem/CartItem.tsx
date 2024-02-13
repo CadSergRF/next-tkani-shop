@@ -8,21 +8,17 @@ import { useCartStore } from "@/lib/store/cart.store";
 
 type Props = {
 	product: TCardMainInfo;
-	quantity: number;
+	index: number;
+	// quantity: number;
 };
 
-const CartItem = ({ product, quantity }: Props) => {
+// const CartItem = ({ product, quantity }: Props) => {
+const CartItem = ({ product, index }: Props) => {
 	const { id, article, title, price, measure, image } = product;
 
 	const removeFromCart = useCartStore((state) => state.removeFromCart);
 	const updateQuantity = useCartStore((state) => state.updateQuantity);
-	const cartForItem = useCartStore((state) => state.cart);
-
-	const findProd = cartForItem.findIndex(
-		(item) => item.cartProduct.id === product.id,
-	);
-
-	const newQuantity = cartForItem[findProd].orderQuantity;
+	const quantity = useCartStore((state) => state.cart[index].orderQuantity);
 
 	const itemSum = Math.round((price * quantity * 100) / 100).toFixed(2);
 
@@ -58,7 +54,6 @@ const CartItem = ({ product, quantity }: Props) => {
 						)}
 						onClick={() => updateQuantity(id, "decrease")}
 					/>
-					<span>{newQuantity}</span>
 					<input
 						className={styles.cart_item__input_number__input}
 						type="number"
@@ -74,7 +69,7 @@ const CartItem = ({ product, quantity }: Props) => {
 							styles.cart_item__input_number__btn,
 							styles.cart_item__input_number__btn_plus,
 						)}
-						// onClick={QuantityPlus}
+						onClick={() => updateQuantity(id, "increase")}
 					/>
 				</div>
 				<p className={styles.cart_item__input_number__text}>{measure}</p>

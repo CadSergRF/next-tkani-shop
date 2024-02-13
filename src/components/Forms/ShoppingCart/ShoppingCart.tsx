@@ -36,11 +36,12 @@ const ShoppingCart = () => {
 						<p></p>
 					</li>
 					{cartItems ? (
-						cartItems.map((item) => (
+						cartItems.map((item, index) => (
 							<CartItem
 								key={item.cartProduct.id}
 								product={item.cartProduct}
-								quantity={item.orderQuantity}
+								index={index}
+								// quantity={item.orderQuantity}
 							/>
 						))
 					) : (
