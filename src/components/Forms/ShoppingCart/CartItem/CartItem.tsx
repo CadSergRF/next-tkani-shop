@@ -9,10 +9,8 @@ import { useCartStore } from "@/lib/store/cart.store";
 type Props = {
 	product: TCardMainInfo;
 	index: number;
-	// quantity: number;
 };
 
-// const CartItem = ({ product, quantity }: Props) => {
 const CartItem = ({ product, index }: Props) => {
 	const { id, article, title, price, measure, image } = product;
 

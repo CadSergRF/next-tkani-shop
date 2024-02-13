@@ -55,17 +55,18 @@ export const useCartStore = create<cartState>()(
 						);
 						console.log("найденный" + findProduct?.orderQuantity);
 						if (findProduct) {
+							let quantityVariable = findProduct.orderQuantity;
 							if (action === "decrease") {
-								findProduct.orderQuantity =
-									findProduct.orderQuantity! > 0.1
-										? findProduct.orderQuantity! - 0.1
-										: findProduct.orderQuantity!;
+								quantityVariable > 0.1
+									? (quantityVariable -= 0.1)
+									: (quantityVariable = 0);
 							} else {
-								findProduct.orderQuantity! += 0.1;
+								quantityVariable += 0.1;
 							}
+							findProduct.orderQuantity =
+								Math.round((quantityVariable + Number.EPSILON) * 100) / 100;
 						}
 						console.log("измененный" + findProduct?.orderQuantity);
-
 						return { cart: newCart };
 					}),
 				showCart: false,

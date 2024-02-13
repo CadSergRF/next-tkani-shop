@@ -1,9 +1,9 @@
-import { TCardLittle } from "@/Types/TCard";
+import { TCardMainInfo } from "@/Types/TCard";
 import "./PcCompanion.css";
 import { PcCompanionCards } from "./PcCompanionCards/PcCompanionCards";
 
 type Props = {
-	cards: TCardLittle[];
+	cards: TCardMainInfo[];
 };
 
 const PcCompanion = ({ cards }: Props) => {

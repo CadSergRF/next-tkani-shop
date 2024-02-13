@@ -1,13 +1,13 @@
 "use client";
 
-import { TCardLittle } from "@/Types/TCard";
+import { TCardMainInfo } from "@/Types/TCard";
 
 import "./PcCompanionCards.css";
 import clsx from "clsx";
 import { AddToCart } from "@/components/Forms/AddToCart/AddToCart";
 
 type Props = {
-	cards: TCardLittle[];
+	cards: TCardMainInfo[];
 };
 
 const PcCompanionCards = ({ cards }: Props) => {
