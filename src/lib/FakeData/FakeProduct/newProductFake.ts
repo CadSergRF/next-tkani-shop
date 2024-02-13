@@ -12,6 +12,7 @@ export const card_one = {
 };
 
 export const card_product = {
+	id: "1",
 	article: "К-рк-9",
 	title: "Сатин ракеты и планеты",
 	price: 350,

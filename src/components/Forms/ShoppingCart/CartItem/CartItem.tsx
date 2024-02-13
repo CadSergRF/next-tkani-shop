@@ -1,7 +1,10 @@
+import Image from "next/image";
+
 import { TCardMainInfo } from "@/Types/TCard";
 
 import styles from "./CartItem.module.css";
-import Image from "next/image";
+import clsx from "clsx";
+import { useCartStore } from "@/lib/store/cart.store";
 
 type Props = {
 	product: TCardMainInfo;
@@ -9,30 +12,101 @@ type Props = {
 };
 
 const CartItem = ({ product, quantity }: Props) => {
-	const { id, article, title, price, measure, image, description } = product;
+	const { id, article, title, price, measure, image } = product;
 
-	const itemSum = price * quantity;
+	const removeFromCart = useCartStore((state) => state.removeFromCart);
+	const updateQuantity = useCartStore((state) => state.updateQuantity);
+	const cartForItem = useCartStore((state) => state.cart);
+
+	const findProd = cartForItem.findIndex(
+		(item) => item.cartProduct.id === product.id,
+	);
+
+	const newQuantity = cartForItem[findProd].orderQuantity;
+
+	const itemSum = Math.round((price * quantity * 100) / 100).toFixed(2);
+
+	const priceMeasure = measure === "м.п." ? "руб./м." : "руб.";
 
 	return (
-		<li>
+		<li className={styles.cart_item__container}>
+			{/* Блок изображения */}
 			<div>
 				{image && (
 					<Image
 						src={image}
-						width={280}
-						height={100}
+						width={80}
+						height={80}
 						alt="Превью новости"
 						style={{ objectFit: "cover" }}
 					/>
 				)}
 			</div>
-			<div>
-				<h3>{title}</h3>
-				<p>{article}</p>
+			{/* Наименование и артикул */}
+			<div className={styles.cart_item__text}>
+				<h3 className={styles.cart_item__title}>{title}</h3>
+				<p className={styles.cart_item__article}>Артикул: {article}</p>
 			</div>
-			<div>{price}</div>
-			<div>{itemSum}</div>
-			<button type="button">удалить</button>
+			{/* Количество товара */}
+			<div className={styles.cart_item__input_number__container}>
+				<div className={styles.cart_item__input_number}>
+					<button
+						type="button"
+						className={clsx(
+							styles.cart_item__input_number__btn,
+							styles.cart_item__input_number__btn_minus,
+						)}
+						onClick={() => updateQuantity(id, "decrease")}
+					/>
+					<span>{newQuantity}</span>
+					<input
+						className={styles.cart_item__input_number__input}
+						type="number"
+						min={0}
+						step={0.1}
+						value={quantity}
+						readOnly={true}
+						// onChange={InputChange}
+					/>
+					<button
+						type="button"
+						className={clsx(
+							styles.cart_item__input_number__btn,
+							styles.cart_item__input_number__btn_plus,
+						)}
+						// onClick={QuantityPlus}
+					/>
+				</div>
+				<p className={styles.cart_item__input_number__text}>{measure}</p>
+			</div>
+			{/* Блок цена */}
+			<div
+				className={clsx(
+					styles.cart_item__price,
+					styles.cart_item__internal_container,
+				)}
+			>
+				{price}
+				<span className={styles.cart_item__price_measure}>{priceMeasure}</span>
+			</div>
+			{/* Блок сумма */}
+			<div
+				className={clsx(
+					styles.cart_item__sum,
+					styles.cart_item__internal_container,
+				)}
+			>
+				{itemSum}
+				<span className={styles.cart_item__sum_measure}>руб.</span>
+			</div>
+			{/* Кнопка удалить */}
+			<button
+				type="button"
+				className={styles.cart_item__btn_remove}
+				onClick={() => removeFromCart(id)}
+			>
+				удалить
+			</button>
 		</li>
 	);
 };

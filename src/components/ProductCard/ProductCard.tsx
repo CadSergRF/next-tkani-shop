@@ -1,12 +1,12 @@
 import { TCardFull } from "@/Types/TCard";
 
 import "./ProductCard.css";
-import Image from "next/image";
+import clsx from "clsx";
+
 import { PcImagesBlock } from "./PcImagesBlock/PcImagesBlock";
 import { AddToCart } from "../Forms/AddToCart/AddToCart";
 import { returnRules, sendingRules } from "@/config/constants";
 import { WriteSocialBtn } from "../ui-kit/WriteSocialBtn/WriteSocialBtn";
-import clsx from "clsx";
 
 type Props = {
 	card: TCardFull;
@@ -14,6 +14,7 @@ type Props = {
 
 const ProductCard = ({ card }: Props) => {
 	const {
+		id,
 		article,
 		title,
 		price,

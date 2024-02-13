@@ -1,0 +1,141 @@
+.cart_item__container {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 80px auto 150px 100px 150px 100px;
+	gap: 30px;
+	align-items: center;
+}
+
+.cart_item__internal_container {
+	display: flex;
+	align-items: baseline;
+	gap: 5px;
+}
+
+.cart_item__text {
+	flex-grow: 1;
+}
+
+.cart_item__title {
+	font-weight: 500;
+	font-size: 14px;
+	font-family: var(--var-font-main);
+	margin-bottom: 10px;
+}
+
+.cart_item__article {
+	font-weight: 500;
+	font-size: 12px;
+	font-family: var(--var-font-main);
+}
+
+.cart_item__price {
+	font-family: var(--var-font-main);
+	font-weight: 500;
+	font-size: 20px;
+}
+
+.cart_item__price_measure {
+	font-size: 14px;
+}
+
+.cart_item__sum {
+	justify-self: end;
+	font-family: var(--var-font-main);
+	font-weight: 600;
+	font-size: 20px;
+}
+
+.cart_item__sum_measure {
+	font-size: 14px;
+}
+
+.cart_item__btn_remove {
+	font-family: var(--var-font-main);
+	font-weight: 500;
+	font-size: 13px;
+	background-color: transparent;
+	border: 1px solid var(--color-text-main);
+	border-radius: 8px;
+	height: 30px;
+	padding: 0 20px;
+	cursor: pointer;
+}
+
+.cart_item__btn_remove:active {
+	outline: none;
+	box-shadow:
+		inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+		inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.cart_item__input_number__container {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.cart_item__input_number {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	min-width: 100px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	border: none;
+	border-radius: 8px;
+	background-color: var(--color-light-gray);
+	padding: 20px 5px;
+}
+
+.cart_item__input_number__input {
+	-moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	appearance: textfield;
+	text-align: center;
+	width: 35px;
+	border: none;
+	font-weight: 400;
+	font-size: 18px;
+	color: var(--color-text-main);
+	background-color: transparent;
+}
+
+.cart_item__input_number__input:focus {
+	outline: none;
+}
+
+.cart_item__input_number__input::-webkit-outer-spin-button,
+.cart_item__input_number__input::-webkit-inner-spin-button {
+	display: none;
+}
+
+.cart_item__input_number__btn {
+	border: none;
+	background-color: transparent;
+	padding: 0 4px;
+	cursor: pointer;
+	width: 18px;
+	height: 18px;
+	background-color: transparent;
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+.cart_item__input_number__btn_minus {
+	background-image: url(../../../../lib/images/icon-minus.svg);
+}
+
+.cart_item__input_number__btn_plus {
+	background-image: url(../../../../lib/images/icon-plus.svg);
+}
+
+.cart_item__input_number__text {
+	font-weight: 400;
+	font-size: 17px;
+}
