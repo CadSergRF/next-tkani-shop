@@ -31,24 +31,3 @@
 .cs__product_list__title_item {
 	justify-self: center;
 }
-
-.cs__product_list__order_amount {
-	width: fit-content;
-	margin: 25px auto;
-	font-family: var(--var-font-main);
-}
-
-.cs__product_list__order_amount__title {
-	font-weight: 500;
-	font-size: 24px;
-}
-
-.cs__product_list__order_amount__price {
-	font-weight: 600;
-	font-size: 28px;
-}
-
-.cs__product_list__order_amount__text {
-	font-weight: 600;
-	font-size: 24px;
-}

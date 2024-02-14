@@ -1,0 +1,22 @@
+.order_amount {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	margin: 25px auto;
+	font-family: var(--var-font-main);
+}
+
+.order_amount__title {
+	font-weight: 500;
+	font-size: 24px;
+}
+
+.order_amount__price {
+	font-weight: 600;
+	font-size: 28px;
+}
+
+.order_amount__text {
+	font-weight: 600;
+	font-size: 24px;
+}

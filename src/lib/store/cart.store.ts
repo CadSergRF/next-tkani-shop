@@ -13,7 +13,6 @@ type cartState = {
 	addToCart: (productToCart: TOrderProduct) => void;
 	removeFromCart: (productID: string) => void;
 	updateQuantity: (productID: string, action: "increase" | "decrease") => void;
-	showCart: boolean;
 };
 
 export const useCartStore = create<cartState>()(
@@ -69,7 +68,6 @@ export const useCartStore = create<cartState>()(
 						console.log("измененный" + findProduct?.orderQuantity);
 						return { cart: newCart };
 					}),
-				showCart: false,
 			}),
 			{ name: "cartStore" },
 		),

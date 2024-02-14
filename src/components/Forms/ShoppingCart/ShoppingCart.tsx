@@ -4,23 +4,12 @@ import { useCartStore } from "@/lib/store/cart.store";
 import { CartItem } from "./CartItem/CartItem";
 
 import styles from "./ShoppingCart.module.css";
+import { OrderAmount } from "./OrderAmount/OrderAmount";
 
 const ShoppingCart = () => {
 	const cartItems = useCartStore((state) => state.cart);
 
-	const orderReduce = cartItems.reduce(
-		(acc, item) => acc + item.cartProduct.price * item.orderQuantity,
-		0,
-	);
-
-	console.log(cartItems);
-
-	const orderAmount = Math.round((orderReduce + Number.EPSILON) * 100) / 100;
-	const orderAmountRub = Math.trunc(orderAmount);
-	// Дробная часть
-	const orderAmountKop = (orderAmount - orderAmountRub) * 100;
-	const orderAmountKopToScreen =
-		orderAmountKop === 0 ? "00" : orderAmountKop.toFixed(0);
+	console.log("ShoppingCart" + cartItems);
 
 	return (
 		<>
@@ -48,23 +37,7 @@ const ShoppingCart = () => {
 						<p>Корзина пустая</p>
 					)}
 				</ul>
-				<div className={styles.cs__product_list__order_amount}>
-					<span className={styles.cs__product_list__order_amount__title}>
-						Сумма заказа:{" "}
-					</span>
-					<span className={styles.cs__product_list__order_amount__price}>
-						{orderAmountRub.toFixed(0)}
-					</span>
-					<span className={styles.cs__product_list__order_amount__text}>
-						руб.{" "}
-					</span>
-					<span className={styles.cs__product_list__order_amount__price}>
-						{orderAmountKopToScreen}
-					</span>
-					<span className={styles.cs__product_list__order_amount__text}>
-						коп.
-					</span>
-				</div>
+				<OrderAmount />
 			</form>
 		</>
 	);
