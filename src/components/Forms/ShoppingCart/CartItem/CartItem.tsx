@@ -5,6 +5,7 @@ import { TCardMainInfo } from "@/Types/TCard";
 import styles from "./CartItem.module.css";
 import clsx from "clsx";
 import { useCartStore } from "@/lib/store/cart.store";
+import { roundedNum } from "@/helpers/func.helpers";
 
 type Props = {
 	product: TCardMainInfo;
@@ -18,7 +19,7 @@ const CartItem = ({ product, index }: Props) => {
 	const updateQuantity = useCartStore((state) => state.updateQuantity);
 	const quantity = useCartStore((state) => state.cart[index].orderQuantity);
 
-	const itemSum = Math.round((price * quantity * 100) / 100).toFixed(2);
+	const itemSum = roundedNum(price * quantity, 2).toFixed(2)
 
 	const priceMeasure = measure === "м.п." ? "руб./м." : "руб.";
 

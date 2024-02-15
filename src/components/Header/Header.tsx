@@ -20,10 +20,11 @@ const Header = () => (
 		</div>
 		<div className={styles.header__central}>
 			<Image
-				src="./images/icon-logo.svg"
+				src="/images/icon-logo.svg"
 				width={300}
 				height={100}
 				alt="Логотип компании Твои ткани"
+				priority={true}
 			/>
 			<SearchMain />
 			<div className={styles.cart_box}>

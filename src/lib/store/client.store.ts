@@ -2,10 +2,10 @@ import { create } from "zustand";
 
 import { TPersonalFullData } from "@/Types/TClient";
 
-export type TClientSlice = {
+export type TClient = {
 	client: TPersonalFullData;
 	changeData: (client: TPersonalFullData) => void;
-	changeAddress: (client: TPersonalFullData) => void;
+	changeParam: (param: string | number) => void;
 };
 
 export const emptyClient = {
@@ -24,12 +24,13 @@ export const emptyClient = {
 	intercom: "-",
 };
 
-export const createClientSlice = create<TClientSlice>()((set, get) => ({
+export const useClientStore = create<TClient>()((set, get) => ({
 	client: emptyClient,
-	changeData: (client: TPersonalFullData) => {
-		console.log(client);
-	},
-	changeAddress: (client: TPersonalFullData) => {
-		console.log(client);
+	changeData: (client: TPersonalFullData) =>
+		set(() => {
+			return { client: client };
+		}),
+	changeParam: (param: string | number) => {
+		console.log(param);
 	},
 }));

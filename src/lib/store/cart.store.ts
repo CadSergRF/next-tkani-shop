@@ -1,12 +1,8 @@
 import { create } from "zustand";
 
-import { TCardFull, TCardMainInfo } from "@/Types/TCard";
 import { devtools, persist } from "zustand/middleware";
-
-type TOrderProduct = {
-	cartProduct: TCardMainInfo;
-	orderQuantity: number;
-};
+import { roundedNum } from "@/helpers/func.helpers";
+import { TOrderProduct } from "@/Types/TCart";
 
 type cartState = {
 	cart: TOrderProduct[];
@@ -29,8 +25,7 @@ export const useCartStore = create<cartState>()(
 						if (findProduct) {
 							const newQuantity =
 								findProduct.orderQuantity + productToCart.orderQuantity;
-							findProduct.orderQuantity =
-								Math.round((newQuantity + Number.EPSILON) * 100) / 100;
+							findProduct.orderQuantity = roundedNum(newQuantity, 2);
 						} else {
 							newCart.push(productToCart);
 						}
@@ -52,7 +47,7 @@ export const useCartStore = create<cartState>()(
 						const findProduct = newCart.find(
 							(item) => item.cartProduct.id === productID,
 						);
-						console.log("найденный" + findProduct?.orderQuantity);
+
 						if (findProduct) {
 							let quantityVariable = findProduct.orderQuantity;
 							if (action === "decrease") {
@@ -62,10 +57,9 @@ export const useCartStore = create<cartState>()(
 							} else {
 								quantityVariable += 0.1;
 							}
-							findProduct.orderQuantity =
-								Math.round((quantityVariable + Number.EPSILON) * 100) / 100;
+							findProduct.orderQuantity = roundedNum(quantityVariable, 2);
 						}
-						console.log("измененный" + findProduct?.orderQuantity);
+
 						return { cart: newCart };
 					}),
 			}),

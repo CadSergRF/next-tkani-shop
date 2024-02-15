@@ -9,6 +9,8 @@ import { useCartStore } from "@/lib/store/cart.store";
 import { InputNumber } from "@/components/ui-kit/InputNumber/InputNumber";
 
 import styles from "./AddToCart.module.css";
+import { roundedNum } from "@/helpers/func.helpers";
+import { REGEXP_QUANTITY } from "@/lib/constants/constants";
 
 type Props = {
 	card: TCardMainInfo;
@@ -30,19 +32,24 @@ const AddToCart = ({
 	const addToCart = useCartStore((state) => state.addToCart);
 
 	const InputMinus = () => {
-		const toValue = Math.round((quantity - 0.1) * 10) / 10;
-		setQuantity(toValue);
+		const toValue = roundedNum(quantity - 0.1, 1);
+		toValue > 0 ? setQuantity(toValue) : setQuantity(0);
 	};
 
 	const InputPlus = () => {
-		const toValue = Math.round((quantity + 0.1) * 10) / 10;
+		const toValue = roundedNum(quantity + 0.1, 1);
 		setQuantity(toValue);
 	};
 
 	const InputChange = (event: ChangeEvent<HTMLInputElement>) => {
 		const { value } = event.target;
-		const toValue = parseFloat(value).toFixed(2);
-		setQuantity(parseFloat(toValue));
+		const toValue = roundedNum(parseFloat(value), 1);
+		if (toValue < 100 && value.match(REGEXP_QUANTITY)) {
+			setQuantity(toValue);
+		} else {
+			console.log("null");
+			setQuantity(0);
+		}
 	};
 
 	const handleAddToCart = (evt: FormEvent<HTMLFormElement>) => {
