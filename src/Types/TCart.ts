@@ -10,7 +10,6 @@ export const DeliveryMethod = [
 	"СДЭК курьером до двери",
 	"Транспортная компания Энергия",
 	"Транспортная компания ПЭК",
-	"Другой вариант",
 ];
 
 export type TOrderProduct = {
@@ -20,6 +19,7 @@ export type TOrderProduct = {
 
 export type TCartFormDelivery = {
 	deliveryType: string;
+	privacyPolicy: string;
 };
 
 export type TCartFormInput = {

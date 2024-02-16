@@ -6,6 +6,7 @@
 
 .pc_companion_title {
 	color: var(--color-text-main);
+	font-family: var(--var-font-main);
 	font-weight: 600;
 	font-size: 22px;
 	margin-bottom: 12px;
@@ -13,6 +14,7 @@
 
 .pc_companion_text {
 	color: var(--color-text-main);
+	font-family: var(--var-font-main);
 	font-weight: 400;
 	font-size: 11px;
 	margin-bottom: 24px;

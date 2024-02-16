@@ -1,18 +1,19 @@
 .new_product {
-  width: 100%;
+	width: 100%;
 }
 
 .new_product__header {
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 3.2;
-  color: #000;
-  text-align: center;
+	font-family: var(--var-font-main);
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 3.2;
+	color: #000;
+	text-align: center;
 }
 
 .new_product__cards {
-  list-style-type: none;
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
+	list-style-type: none;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
 }

@@ -1,78 +1,49 @@
 "use client";
 
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, SubmitHandler, FormProvider } from "react-hook-form";
 
-import { CartItem } from "./CartItem/CartItem";
-import { OrderAmount } from "./OrderAmount/OrderAmount";
+// import { CartItem } from "./Order/CartItem/CartItem";
+// import { OrderAmount } from "./Order/OrderAmount/OrderAmount";
 
-import { useCartStore } from "@/lib/store/cart.store";
+// import { useCartStore } from "@/lib/store/cart.store";
 
 import styles from "./ShoppingCart.module.css";
+
 import {
 	DeliveryMethod,
 	TCartFormDelivery,
 	TCartFormInput,
 } from "@/Types/TCart";
+import { Order } from "./Order/Order";
+import { Delivery } from "./Delivery/Delivery";
+import { PrivatePolicyCheck } from "./PrivatePolicyCheck/PrivatePolicyCheck";
 
 const ShoppingCart = () => {
-	const cartItems = useCartStore((state) => state.cart);
+	// const cartItems = useCartStore((state) => state.cart);
 
-	const { register, handleSubmit } = useForm<TCartFormDelivery>();
-	const onSubmit: SubmitHandler<TCartFormInput> = (data) => console.log(data);
+	const methods = useForm<TCartFormDelivery>();
+	// const onSubmit: SubmitHandler<TCartFormInput> = (data) => console.log(data);
+	const onSubmit: SubmitHandler<TCartFormDelivery> = (data) =>
+		console.log(data);
 
 	return (
 		<>
 			<h2 className={styles.sc_title}>Корзина</h2>
 			<div className={styles.sc_container}>
 				{/* Список выбранных товаров */}
-				<section>
-					<ul className={styles.sc__product_list}>
-						<li className={styles.sc__product_list__title}>
-							<p></p>
-							<p>Наименование</p>
-							<p>Количество</p>
-							<p>Цена</p>
-							<p className={styles.sc__product_list__title_item}>Сумма</p>
-							<p></p>
-						</li>
-						{cartItems ? (
-							cartItems.map((item, index) => (
-								<CartItem
-									key={item.cartProduct.id}
-									product={item.cartProduct}
-									index={index}
-								/>
-							))
-						) : (
-							<p>Корзина пустая</p>
-						)}
-					</ul>
-					<OrderAmount />
-				</section>
+				<Order />
 
 				<span className={styles.sc__empty_block} />
 
 				{/* Варианты доставки */}
-				<section className={styles.sc__delivery}>
+				<section>
 					<h2 className={styles.sc_title}>Способ доставки</h2>
-					{DeliveryMethod ? (
-						DeliveryMethod.map((item, index) => (
-							<label
-								key={item + index}
-								className={styles.sc__delivery__item_label}
-							>
-								<input
-									{...register("deliveryType", { required: true })}
-									type="radio"
-									value={item}
-									className={styles.sc__delivery__item_input}
-								/>
-								<span className={styles.sc__delivery__item_span}>{item}</span>
-							</label>
-						))
-					) : (
-						<p>Варианты доставки отсутствуют</p>
-					)}
+					<FormProvider {...methods}>
+						<form onSubmit={methods.handleSubmit(onSubmit)}>
+							<Delivery />
+							<PrivatePolicyCheck />
+						</form>
+					</FormProvider>
 				</section>
 			</div>
 		</>

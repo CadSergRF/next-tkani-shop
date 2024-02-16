@@ -8,6 +8,7 @@
 
 .main_link_container {
 	margin: 47px auto;
+	font-family: var(--var-font-main);
 	font-weight: 600;
 	font-size: 18px;
 	color: #fff;
@@ -25,6 +26,7 @@
 }
 
 .main_social_title {
+	font-family: var(--var-font-main);
 	font-weight: 600;
 	font-size: 23px;
 }
@@ -45,6 +47,7 @@
 	width: 80%;
 	text-align: center;
 	color: var(--color-text-main);
+	font-family: var(--var-font-main);
 	font-weight: 600;
 	font-size: 20px;
 	line-height: 1.4;
@@ -54,6 +57,7 @@
 .main_why_block_text {
 	text-indent: 20px;
 	color: var(--color-text-main);
+	font-family: var(--var-font-main);
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 1.4;

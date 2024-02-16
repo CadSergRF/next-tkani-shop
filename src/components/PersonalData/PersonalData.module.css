@@ -8,6 +8,7 @@
 
 .personal_data__consentNewsletter {
 	color: var(--color-text-main);
+	font-family: var(--var-font-main);
 	font-weight: 500;
 	font-size: 8px;
 	padding-left: 10px;

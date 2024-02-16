@@ -5,12 +5,14 @@
 
 .block-like-form__title {
 	color: var(--color-text-main);
+	font-family: var(--var-font-main);
 	font-weight: 500;
 	font-size: 7px;
 }
 
 .block-like-form__text {
 	color: var(--color-text-main);
+	font-family: var(--var-font-main);
 	font-weight: 500;
 	font-size: 9px;
 	line-height: 2.5;

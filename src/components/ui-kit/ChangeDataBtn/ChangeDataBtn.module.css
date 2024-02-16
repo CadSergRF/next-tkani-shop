@@ -30,6 +30,7 @@
 .change_data_btn__size_little {
 	padding: 5px 13px;
 	width: 100%;
+	font-family: var(--var-font-main);
 	font-weight: 600;
 	font-size: 12px;
 }

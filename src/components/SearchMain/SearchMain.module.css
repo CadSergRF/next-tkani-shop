@@ -12,6 +12,7 @@
 
 .search_main__input {
 	flex-grow: 1;
+	font-family: var(--var-font-main);
 	font-weight: 600;
 	font-size: 14px;
 	border: none;

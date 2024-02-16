@@ -3,6 +3,7 @@
 }
 
 .last_news__title {
+	font-family: var(--var-font-main);
   font-weight: 700;
   font-size: 24px;
   line-height: 4.5;

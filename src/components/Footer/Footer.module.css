@@ -15,6 +15,7 @@
 	grid-area: A;
 	justify-self: start;
 	color: var(--color-text-main);
+	font-family: var(--var-font-main);
 	font-weight: 500;
 	font-size: 14px;
 }
@@ -54,6 +55,7 @@
 	grid-area: F;
 	justify-self: end;
 	color: var(--color-text-main);
+	font-family: var(--var-font-main);
 	font-weight: 500;
 	font-size: 18px;
 }
@@ -62,6 +64,7 @@
 	grid-area: B;
 	justify-self: end;
 	color: var(--color-text-main);
+	font-family: var(--var-font-main);
 	font-weight: 500;
 	font-size: 16px;
 	text-align: end;
@@ -72,6 +75,7 @@
 	justify-self: center;
 	justify-content: center;
 	color: var(--color-text-main);
+	font-family: var(--var-font-main);
 	font-weight: 500;
 	font-size: 16px;
 	text-align: center;
@@ -91,6 +95,7 @@
 	justify-self: end;
 	align-self: end;
 	color: var(--color-text-main);
+	font-family: var(--var-font-main);
 	font-weight: 500;
 	font-size: 14px;
 }

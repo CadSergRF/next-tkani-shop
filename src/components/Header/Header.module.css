@@ -23,8 +23,9 @@
 }
 
 .menu__phone {
-	font-size: 18px;
+	font-family: var(--var-font-main);
 	font-weight: 600;
+	font-size: 18px;
 	line-height: 19px;
 	padding-right: 10px;
 }

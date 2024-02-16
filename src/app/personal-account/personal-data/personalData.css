@@ -5,6 +5,7 @@
 
 .personal-data__title {
 	color: var(--color-text-main);
+	font-family: var(--var-font-main);
 	font-weight: 700;
 	font-size: 24px;
 }

@@ -42,6 +42,7 @@
 	border-radius: 12px;
 	width: 187px;
 	height: 47px;
+	font-family: var(--var-font-main);
 	font-weight: 600;
 	font-size: 19px;
 }
@@ -64,6 +65,7 @@
 }
 
 .add_to_cart_text {
+	font-family: var(--var-font-main);
 	font-weight: 400;
 	font-size: 12px;
 }

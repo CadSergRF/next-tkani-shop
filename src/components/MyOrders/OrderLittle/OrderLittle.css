@@ -15,12 +15,14 @@
 
 .order-little__date {
 	color: var(--color-text-main);
+	font-family: var(--var-font-main);
 	font-weight: 600;
 	font-size: 17px;
 }
 
 .order-little__status {
 	color: var(--color-text-main);
+	font-family: var(--var-font-main);
 	font-weight: 600;
 	font-size: 14px;
 }

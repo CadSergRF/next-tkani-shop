@@ -17,16 +17,16 @@
 }
 
 .cart_item__title {
+	font-family: var(--var-font-main);
 	font-weight: 500;
 	font-size: 14px;
-	font-family: var(--var-font-main);
 	margin-bottom: 10px;
 }
 
 .cart_item__article {
+	font-family: var(--var-font-main);
 	font-weight: 500;
 	font-size: 12px;
-	font-family: var(--var-font-main);
 }
 
 .cart_item__price {
@@ -98,6 +98,7 @@
 	text-align: center;
 	width: 35px;
 	border: none;
+	font-family: var(--var-font-main);
 	font-weight: 400;
 	font-size: 18px;
 	color: var(--color-text-main);
@@ -128,14 +129,15 @@
 }
 
 .cart_item__input_number__btn_minus {
-	background-image: url(../../../../lib/images/icon-minus.svg);
+	background-image: url(../../../../../lib/images/icon-minus.svg);
 }
 
 .cart_item__input_number__btn_plus {
-	background-image: url(../../../../lib/images/icon-plus.svg);
+	background-image: url(../../../../../lib/images/icon-plus.svg);
 }
 
 .cart_item__input_number__text {
+	font-family: var(--var-font-main);
 	font-weight: 400;
 	font-size: 17px;
 }

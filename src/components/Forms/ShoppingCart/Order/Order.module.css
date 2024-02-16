@@ -1,0 +1,24 @@
+.order {
+	list-style-type: none;
+	min-width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.order__title {
+	width: 100%;
+	height: 30px;
+	display: grid;
+	grid-template-columns: 80px auto 150px 100px 150px 100px;
+	align-items: center;
+	gap: 30px;
+	font-family: var(--var-font-main);
+	font-weight: 500;
+	font-size: 14px;
+	background-color: var(--color-light-gray);
+}
+
+.order__title_item {
+	justify-self: center;
+}
