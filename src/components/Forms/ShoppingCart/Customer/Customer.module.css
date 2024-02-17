@@ -1,0 +1,33 @@
+.customer__container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	align-items: flex-start;
+}
+
+.customer__empty_block {
+	display: block;
+	width: 100%;
+	height: 30px;
+	background-color: var(--color-light-gray);
+}
+
+.customer__label {
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+	font: 500 14px var(--var-font-main);
+}
+
+.customer__item_span {
+	font: 500 14px var(--var-font-main);
+}
+
+.customer__item_input {
+	padding: 5px;
+	font: 500 16px var(--var-font-main);
+	border: none;
+	border-bottom: 1px solid #000;
+	outline: none;
+}

@@ -1,30 +1,40 @@
 "use client";
 
+import { useState } from "react";
 import { useForm, SubmitHandler, FormProvider } from "react-hook-form";
 
-// import { CartItem } from "./Order/CartItem/CartItem";
-// import { OrderAmount } from "./Order/OrderAmount/OrderAmount";
-
-// import { useCartStore } from "@/lib/store/cart.store";
-
-import styles from "./ShoppingCart.module.css";
-
-import {
-	DeliveryMethod,
-	TCartFormDelivery,
-	TCartFormInput,
-} from "@/Types/TCart";
 import { Order } from "./Order/Order";
 import { Delivery } from "./Delivery/Delivery";
 import { PrivatePolicyCheck } from "./PrivatePolicyCheck/PrivatePolicyCheck";
 
+import { TCartFormDelivery } from "@/Types/TCart";
+
+import styles from "./ShoppingCart.module.css";
+import { useCartStore } from "@/lib/store/cart.store";
+import { Customer } from "./Customer/Customer";
+
 const ShoppingCart = () => {
-	// const cartItems = useCartStore((state) => state.cart);
+	const cart = useCartStore((state) => state.cart);
+
+	// state согласие с Правилами и disable кнопки submit
+	const [acceptance, setAcceptance] = useState(false);
+
+	const toggleAcceptance = () => {
+		setAcceptance(!acceptance);
+	};
 
 	const methods = useForm<TCartFormDelivery>();
-	// const onSubmit: SubmitHandler<TCartFormInput> = (data) => console.log(data);
-	const onSubmit: SubmitHandler<TCartFormDelivery> = (data) =>
-		console.log(data);
+	const {
+		formState: { errors },
+	} = methods;
+
+	const onSubmit: SubmitHandler<TCartFormDelivery> = (data) => {
+		const output = {
+			...data,
+			cart: cart,
+		};
+		console.log(output);
+	};
 
 	return (
 		<>
@@ -33,15 +43,22 @@ const ShoppingCart = () => {
 				{/* Список выбранных товаров */}
 				<Order />
 
-				<span className={styles.sc__empty_block} />
-
 				{/* Варианты доставки */}
 				<section>
-					<h2 className={styles.sc_title}>Способ доставки</h2>
 					<FormProvider {...methods}>
-						<form onSubmit={methods.handleSubmit(onSubmit)}>
+						<form
+							className={styles.sc__form}
+							onSubmit={methods.handleSubmit(onSubmit)}
+						>
+							<Customer />
+							<span className={styles.sc__empty_block} />
+							<h2 className={styles.sc_title}>Способ доставки</h2>
 							<Delivery />
-							<PrivatePolicyCheck />
+							<PrivatePolicyCheck toggleAcceptance={toggleAcceptance} />
+							{errors && <p>Заполните все обязательные поля</p>}
+							<button className={styles.sc__button} disabled={!acceptance}>
+								Заказать
+							</button>
 						</form>
 					</FormProvider>
 				</section>

@@ -1,13 +1,18 @@
+.sc_container {
+	min-width: 100%;
+}
+
 .sc_title {
 	width: 100%;
 	font: 700 24px var(--var-font-main);
 	line-height: 3;
 }
 
-.sc_container {
-	min-width: 100%;
+.sc__form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
-
 .sc__empty_block {
 	display: block;
 	width: 100%;
@@ -17,4 +22,36 @@
 
 .sc__privacy_policy {
 	width: 100%;
+}
+
+.sc__button {
+	margin: 10px auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 265px;
+	height: 52px;
+	border: none;
+	border-radius: 6px;
+	font: 600 32px var(--var-font-main);
+	color: var(--color-text-secondary);
+	background-color: var(--color-secondary);
+	cursor: pointer;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.sc__button:disabled {
+	opacity: 0.6;
+	cursor: none;
+}
+
+.sc__button:disabled:active {
+	box-shadow: none;
+}
+
+.sc__button:active {
+	outline: none;
+	box-shadow:
+		inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+		inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }

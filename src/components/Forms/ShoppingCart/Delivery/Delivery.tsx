@@ -1,5 +1,5 @@
 import { useFormContext } from "react-hook-form";
-import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 import { DeliveryMethod } from "@/Types/TCart";
 
@@ -50,6 +50,7 @@ const Delivery = () => {
 					{...register("deliveryType", { required: true })}
 					type="radio"
 					value={`Другой вариант ${otherVariant}`}
+					// value="другой вариант"
 					className={styles.delivery__item_input}
 					checked={checkedOtherVariant}
 				/>

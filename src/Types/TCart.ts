@@ -1,4 +1,5 @@
 import { TCardMainInfo } from "./TCard";
+import { TPersonalData, TPersonalDeliveryAddress } from "./TClient";
 
 export const DeliveryMethod = [
 	"Предложите мне несколько вариантов доставки на выбор",
@@ -18,6 +19,12 @@ export type TOrderProduct = {
 };
 
 export type TCartFormDelivery = {
+	cart: TOrderProduct[];
+	customerData: {
+		name: string;
+		email: string;
+	};
+	customerAddress: TPersonalDeliveryAddress;
 	deliveryType: string;
 	privacyPolicy: string;
 };

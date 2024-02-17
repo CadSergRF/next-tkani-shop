@@ -3,7 +3,11 @@ import { useFormContext } from "react-hook-form";
 import styles from "./PrivatePolicyCheck.module.css";
 import Link from "next/link";
 
-const PrivatePolicyCheck = () => {
+type Props = {
+	toggleAcceptance: () => void;
+};
+
+const PrivatePolicyCheck = ({ toggleAcceptance }: Props) => {
 	const { register } = useFormContext();
 
 	return (
@@ -12,8 +16,9 @@ const PrivatePolicyCheck = () => {
 				<input
 					{...register("privacyPolicy")}
 					type="checkbox"
-					value="Acceptance "
+					value="Acceptance"
 					className={styles.privacy_policy__input}
+					onChange={toggleAcceptance}
 				/>
 				<div className={styles.privacy_policy__span}>
 					<p>Я согласен с&nbsp;</p>
