@@ -19,7 +19,7 @@ export type TOrderProduct = {
 };
 
 export type TCartFormDelivery = {
-	cart: TOrderProduct[];
+	// cart: TOrderProduct[];
 	customerData: {
 		name: string;
 		phoneNumber: string;

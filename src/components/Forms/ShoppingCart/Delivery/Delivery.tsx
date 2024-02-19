@@ -6,7 +6,7 @@ import { DeliveryMethod } from "@/Types/TCart";
 import styles from "./Delivery.module.css";
 
 const Delivery = () => {
-	const { register } = useFormContext();
+	const { register, setValue } = useFormContext();
 
 	// state для опции "Другой вариант"
 	const [checkedOtherVariant, setCheckedOtherVariant] =
@@ -15,14 +15,16 @@ const Delivery = () => {
 
 	const handleChangeOtherVariant = (evt: ChangeEvent<HTMLInputElement>) => {
 		const enterVariant = evt.target.value;
-		enterVariant?.length > 0 && setCheckedOtherVariant(true);
 		setOtherVariant(enterVariant);
+
+		setValue("deliveryType", `Другой вариант ${enterVariant}`);
 	};
 
 	const handleCheckedOtherVariant = () => {
 		setCheckedOtherVariant(true);
 	};
 
+	// Сброс данных Другого варианта
 	const handleResetOtherVariant = () => {
 		setCheckedOtherVariant(false);
 		setOtherVariant("");
@@ -30,6 +32,7 @@ const Delivery = () => {
 
 	return (
 		<div className={styles.delivery}>
+			<h2 className={styles.delivery_title}>Способ доставки</h2>
 			{DeliveryMethod &&
 				DeliveryMethod.map((item, index) => (
 					<label key={item + index} className={styles.delivery__label}>
@@ -49,8 +52,6 @@ const Delivery = () => {
 				<input
 					{...register("deliveryType", { required: true })}
 					type="radio"
-					value={`Другой вариант ${otherVariant}`}
-					// value="другой вариант"
 					className={styles.delivery__item_input}
 					checked={checkedOtherVariant}
 				/>

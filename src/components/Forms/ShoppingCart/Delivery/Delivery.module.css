@@ -4,6 +4,12 @@
 	gap: 10px;
 }
 
+.delivery_title {
+	width: 100%;
+	font: 700 24px var(--var-font-main);
+	line-height: 3;
+}
+
 .delivery__label {
 	width: fit-content;
 }

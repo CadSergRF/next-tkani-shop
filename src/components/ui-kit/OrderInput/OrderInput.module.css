@@ -1,0 +1,41 @@
+.orderInput__label {
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+	font: 500 14px var(--var-font-main);
+}
+
+.orderInput__item__title_error {
+	display: flex;
+	justify-content: flex-start;
+	gap: 20px;
+}
+
+.orderInput__error {
+	font: 500 14px var(--var-font-main);
+	color: var(--color-error);
+}
+
+.orderInput__item_span {
+	font: 500 14px var(--var-font-main);
+}
+
+.orderInput__item_input {
+	min-width: 600px;
+	padding: 5px;
+	font: 500 16px var(--var-font-main);
+	border: none;
+	border-bottom: 1px solid #000;
+	outline: none;
+}
+
+.orderInput__item_input[type="number"] {
+	-moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	appearance: textfield;
+}
+
+.orderInput__item_input[type="number"]::-webkit-outer-spin-button,
+.orderInput__item_input[type="number"]::-webkit-inner-spin-button {
+	display: none;
+}
