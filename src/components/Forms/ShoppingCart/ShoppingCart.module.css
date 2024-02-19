@@ -13,12 +13,6 @@
 	flex-direction: column;
 	align-items: center;
 }
-.sc__empty_block {
-	display: block;
-	width: 100%;
-	height: 30px;
-	background-color: var(--color-light-gray);
-}
 
 .sc__privacy_policy {
 	width: 100%;

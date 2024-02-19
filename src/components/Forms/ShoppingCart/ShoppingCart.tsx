@@ -23,10 +23,27 @@ const ShoppingCart = () => {
 		setAcceptance(!acceptance);
 	};
 
-	const methods = useForm<TCartFormDelivery>();
-	const {
-		formState: { errors },
-	} = methods;
+	const methods = useForm<TCartFormDelivery>({
+		mode: "onBlur",
+		defaultValues: {
+			cart: [],
+			customerData: {
+				name: "",
+				email: "",
+			},
+			customerAddress: {
+				town: "",
+				streetHome: "",
+				entrance: "",
+				floor: "",
+				apartment: "",
+				intercom: "",
+				postIndex: undefined,
+			},
+			deliveryType: "",
+			privacyPolicy: "",
+		},
+	});
 
 	const onSubmit: SubmitHandler<TCartFormDelivery> = (data) => {
 		const output = {
@@ -51,11 +68,10 @@ const ShoppingCart = () => {
 							onSubmit={methods.handleSubmit(onSubmit)}
 						>
 							<Customer />
-							<span className={styles.sc__empty_block} />
 							<h2 className={styles.sc_title}>Способ доставки</h2>
 							<Delivery />
 							<PrivatePolicyCheck toggleAcceptance={toggleAcceptance} />
-							{errors && <p>Заполните все обязательные поля</p>}
+							{methods.formState.errors?. && <p>Ошибка</p>}
 							<button className={styles.sc__button} disabled={!acceptance}>
 								Заказать
 							</button>
