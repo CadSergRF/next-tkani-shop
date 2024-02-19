@@ -17,6 +17,11 @@
 	margin: 15px 0;
 }
 
+.customer__error {
+	font: 500 14px var(--var-font-main);
+	color: var(--color-error);
+}
+
 .customer__title {
 	font: 700 24px var(--var-font-main);
 	margin: 10px 0;

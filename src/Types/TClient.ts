@@ -9,9 +9,9 @@ export type TPersonalData = {
 
 export type TPersonalDeliveryAddress = {
 	postIndex?: number;
-	town?: string;
-	streetHome?: string;
-	apartment?: string;
+	town: string;
+	streetHome: string;
+	apartment: string;
 	floor?: string;
 	entrance?: string;
 	intercom?: string;

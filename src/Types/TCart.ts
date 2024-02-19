@@ -22,6 +22,7 @@ export type TCartFormDelivery = {
 	cart: TOrderProduct[];
 	customerData: {
 		name: string;
+		phoneNumber: string;
 		email: string;
 	};
 	customerAddress: TPersonalDeliveryAddress;

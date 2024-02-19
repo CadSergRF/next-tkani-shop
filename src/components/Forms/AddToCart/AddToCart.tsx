@@ -10,7 +10,7 @@ import { InputNumber } from "@/components/ui-kit/InputNumber/InputNumber";
 
 import styles from "./AddToCart.module.css";
 import { roundedNum } from "@/helpers/func.helpers";
-import { REGEXP_QUANTITY } from "@/lib/constants/constants";
+import { REGEX_QUANTITY } from "@/lib/constants/constants";
 
 type Props = {
 	card: TCardMainInfo;
@@ -44,7 +44,7 @@ const AddToCart = ({
 	const InputChange = (event: ChangeEvent<HTMLInputElement>) => {
 		const { value } = event.target;
 		const toValue = roundedNum(parseFloat(value), 1);
-		if (toValue < 100 && value.match(REGEXP_QUANTITY)) {
+		if (toValue < 100 && value.match(REGEX_QUANTITY)) {
 			setQuantity(toValue);
 		} else {
 			console.log("null");

@@ -1,6 +1,7 @@
 import { useFormContext } from "react-hook-form";
-import styles from "./Customer.module.css";
+import { ErrorMessage } from "@hookform/error-message";
 import clsx from "clsx";
+import styles from "./Customer.module.css";
 
 const Customer = () => {
 	const {
@@ -18,7 +19,13 @@ const Customer = () => {
 			<label className={styles.customer__label}>
 				<div className={styles.customer__item__title_error}>
 					<span className={styles.customer__item_span}>ФИО*</span>
-					{(errors?.customerData as any)?.name && <p>ошибка</p>}
+					<ErrorMessage
+						errors={errors}
+						name="customerData.name"
+						render={({ message }) => (
+							<p className={styles.customer__error}>{message}</p>
+						)}
+					/>
 				</div>
 				<input
 					{...register("customerData.name", {
