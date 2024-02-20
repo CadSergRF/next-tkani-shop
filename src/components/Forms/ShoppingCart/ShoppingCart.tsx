@@ -29,7 +29,7 @@ const ShoppingCart = () => {
 
 	const methods = useForm<TCartFormDelivery>({
 		mode: "onChange",
-		// defaultValues: defaultOrderData,
+		defaultValues: defaultOrderData,
 		resolver: yupResolver(schemaOrderValidation),
 	});
 

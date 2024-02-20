@@ -41,7 +41,7 @@ export const schemaOrderValidation = yup
 			floor: yup.string().matches(REGEX_NUMBERS, "Только цифры"),
 			entrance: yup.string().matches(REGEX_NUMBERS, "Только цифры"),
 			intercom: yup.string().matches(REGEX_NUMBERS, "Только цифры"),
-			postIndex: yup.number(),
+			postIndex: yup.string().matches(REGEX_NUMBERS, "Только цифры"),
 		}),
 		deliveryType: yup.string().required("Выберите способ доставки"),
 		privacyPolicy: yup
