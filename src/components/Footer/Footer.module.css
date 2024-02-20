@@ -48,6 +48,8 @@
 .footer_social {
 	grid-area: C;
 	justify-self: center;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
 	width: fit-content;
 }
 

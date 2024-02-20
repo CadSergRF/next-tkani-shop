@@ -20,6 +20,9 @@
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	font: 500 16px var(--var-font-main);
 }

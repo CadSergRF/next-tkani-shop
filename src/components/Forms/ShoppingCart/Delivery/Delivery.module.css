@@ -11,6 +11,8 @@
 }
 
 .delivery__label {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
 	width: fit-content;
 }
 
@@ -24,7 +26,10 @@
 .delivery__item_span {
 	display: inline-flex;
 	align-items: center;
-	user-select: none;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
 	font: 500 24px var(--var-font-main);
 	cursor: pointer;
 }

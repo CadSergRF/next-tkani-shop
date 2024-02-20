@@ -1,16 +1,16 @@
 .last_news {
-  width: 100%;
+	width: 100%;
 }
 
 .last_news__title {
 	font-family: var(--var-font-main);
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 4.5;
-  text-align: center;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 4.5;
+	text-align: center;
 }
 
 .last_news__zone {
-  display: flex;
-  justify-content: space-evenly;
+	display: flex;
+	justify-content: space-evenly;
 }
