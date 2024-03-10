@@ -3,7 +3,7 @@ import { create } from "zustand";
 import { TPersonalFullData } from "@/Types/TClient";
 
 export type TClient = {
-	client: TPersonalFullData;
+	client: TPersonalFullData | null;
 	changeData: (client: TPersonalFullData) => void;
 	changeParam: (param: string | number) => void;
 };

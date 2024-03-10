@@ -38,7 +38,6 @@ const ShoppingCart = () => {
 			...data,
 			cart: cart,
 		};
-		console.log(output);
 	};
 
 	return (

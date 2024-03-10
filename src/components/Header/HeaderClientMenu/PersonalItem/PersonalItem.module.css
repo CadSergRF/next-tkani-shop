@@ -1,0 +1,36 @@
+.personal_item__link {
+	/* position: relative; */
+	width: 27px;
+	min-width: 27px;
+	height: 27px;
+	min-height: 27px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-decoration: none;
+	color: var(--var-font-main);
+	/* padding: 0;
+	border: none;
+	background-image: url(../../../../lib/images/icon-personal.svg);
+	background-color: transparent;
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat; */
+	transition: opacity 0.2s ease-in-out;
+	cursor: pointer;
+}
+
+.personal_item__link:hover {
+	opacity: 0.8;
+}
+
+.personal_item__text {
+	text-decoration: none !important;
+	font: 500 14px var(--var-font-main);
+}
+
+/* .personal_item__tooltip {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+} */

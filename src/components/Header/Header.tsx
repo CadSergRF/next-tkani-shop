@@ -1,7 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
-import clsx from "clsx";
 
 import { RouteMenu } from "../RouteMenu/RouteMenu";
 import { SearchMain } from "../SearchMain/SearchMain";
@@ -9,6 +7,7 @@ import { SubMenu } from "../SubMenu/SubMenu";
 
 import styles from "./Header.module.css";
 import { WriteSocialBtn } from "../ui-kit/WriteSocialBtn/WriteSocialBtn";
+import { HeaderClientMenu } from "./HeaderClientMenu/HeaderClientMenu";
 
 const Header = () => (
 	<header className={styles.header}>
@@ -27,33 +26,7 @@ const Header = () => (
 				priority={true}
 			/>
 			<SearchMain />
-			<div className={styles.cart_box}>
-				<div className={styles.cart_box__icons}>
-					<Link
-						href="/personal-account"
-						className={clsx(
-							styles.cart_box__link,
-							styles.cart_box_link_personal,
-						)}
-					/>
-					<Link
-						href="/favourites"
-						className={clsx(
-							styles.cart_box__link,
-							styles.cart_box_link_favourites,
-						)}
-					/>
-					<Link
-						href="/shopping-cart"
-						className={clsx(styles.cart_box__link, styles.cart_box_link_cart)}
-					/>
-				</div>
-				<WriteSocialBtn
-					link="https://wa.me/79234906508?text=Добрый%день."
-					text="Написать в WhatsApp"
-					color="blue"
-				/>
-			</div>
+			<HeaderClientMenu />
 		</div>
 		<SubMenu />
 	</header>

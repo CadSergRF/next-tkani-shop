@@ -1,0 +1,13 @@
+.cart_box {
+	width: 200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.cart_box__icons {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	padding: 22px 0;
+}

@@ -47,7 +47,6 @@ const AddToCart = ({
 		if (toValue < 100 && value.match(REGEX_QUANTITY)) {
 			setQuantity(toValue);
 		} else {
-			console.log("null");
 			setQuantity(0);
 		}
 	};

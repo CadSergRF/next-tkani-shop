@@ -1,0 +1,28 @@
+.cart_box__link {
+	width: 27px;
+	min-width: 27px;
+	height: 27px;
+	min-height: 27px;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+	transition: opacity 0.2s ease-in-out;
+	cursor: pointer;
+}
+
+.cart_box__link:hover {
+	opacity: 0.8;
+}
+
+.cart_box_link_personal {
+	background-image: url(../../../../lib/images/icon-personal.svg);
+}
+.cart_box_link_favourites {
+	background-image: url(../../../../lib/images/icon-like.svg);
+}
+.cart_box_link_cart {
+	background-image: url(../../../../lib/images/icon-cart.svg);
+}
