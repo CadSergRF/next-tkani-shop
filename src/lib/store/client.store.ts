@@ -25,7 +25,7 @@ export const emptyClient = {
 };
 
 export const useClientStore = create<TClient>()((set, get) => ({
-	client: emptyClient,
+	client: null,
 	changeData: (client: TPersonalFullData) =>
 		set(() => {
 			return { client: client };
