@@ -1,22 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import useSWR from "swr";
+import { useEffect } from "react";
+
+import { checkLogin } from "@/helpers/func.helpers";
 
 import { useClientStore } from "@/lib/store/client.store";
 
 import styles from "./PersonalItem.module.css";
 
-const fetcher = (url: string) => fetch(url).then((r) => r.json());
-
 const PersonalItem = () => {
 	// Достаем пользователя из стора
-	const { client } = useClientStore();
+	const client = useClientStore((state) => state.client);
 
-	// Если клиента нет проверяем его авторизацию через токены в cookies
-	if (!client) {
-		const { data, error, isLoading } = useSWR(`api/user/checkLogin`, fetcher);
-	}
+	useEffect(() => {
+		if (!client) {
+			checkLogin();
+		}
+	}, []);
 
 	return (
 		<Link

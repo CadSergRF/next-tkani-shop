@@ -1,9 +1,9 @@
-import { type NextRequest } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 import { cookies } from "next/headers";
 
 const { EXTERNAL_SERVER_HOST, INTERN_TOKEN_NAME } = process.env;
 
-export async function GET(req: NextRequest) {
+export async function GET(req: NextRequest, res: NextResponse) {
 	try {
 		// Проверяем имя токена в env.
 		if (INTERN_TOKEN_NAME) {
@@ -11,31 +11,54 @@ export async function GET(req: NextRequest) {
 			const token = req.cookies.get(INTERN_TOKEN_NAME);
 			if (token) {
 				// делаем запрос на бэк для подтверждения пользователя
-				const res = await fetch(`${EXTERNAL_SERVER_HOST}/checkuserlogin`);
-				const resp = await res.json();
-
-				return new Response(
-					JSON.stringify({ message: "Пользователь авторизован" }),
-					{
-						status: 200,
-						headers: { "Set-Cookie": `${INTERN_TOKEN_NAME}=${resp.secret}` },
-					},
-				);
+				const res = await fetch(`${EXTERNAL_SERVER_HOST}/checkuserlogin`, {
+					cache: "no-store",
+				});
+				// Если ответ получен
+				if (res.ok) {
+					const resp = await res.json(); // Получаем json
+					// console.log("RESP ", resp);
+					// Устанавливаем cookie для ответа
+					cookies().set({
+						name: INTERN_TOKEN_NAME,
+						value: resp.secret,
+						httpOnly: true,
+						maxAge: 365 * 24 * 60 * 60,
+						path: "/",
+					});
+					// формируем ответ
+					return new Response(
+						JSON.stringify({
+							message: "Пользователь авторизован",
+							user: resp.user,
+						}),
+						{
+							status: 200,
+						},
+					);
+				}
+				// Если получили ошибку запроса на внешний сервер
+				return new Response(JSON.stringify({ message: "Ошибка сервера" }), {
+					status: 500,
+				});
 			}
+			// если в запросе не token возвращаем ошибку
 			return new Response(
-				JSON.stringify({ message: "Пользователь не авторизован" }),
+				JSON.stringify({ message: "Необходима авторизация пользователя" }),
 				{
 					status: 401,
 				},
 			);
 		}
+		// Если в .env не прописан token name возвращаем ошибку
 		return new Response(
-			JSON.stringify({ message: "Пользователь не авторизован" }),
+			JSON.stringify({ message: "Переменные авторизации не найдены" }),
 			{
-				status: 401,
+				status: 400,
 			},
 		);
 	} catch (error) {
+		// Другие возможные ошибки выполнения запроса
 		return new Response(JSON.stringify({ error: error }), {
 			status: 503,
 		});
