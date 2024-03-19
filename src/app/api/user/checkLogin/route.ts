@@ -44,9 +44,10 @@ export async function GET(req: NextRequest, res: NextResponse) {
 			}
 			// если в запросе не token возвращаем ошибку
 			return new Response(
-				JSON.stringify({ message: "Необходима авторизация пользователя" }),
+				JSON.stringify({ message: "Пользователь не авторизован" }),
 				{
 					status: 401,
+					statusText: "Пользователь не авторизован",
 				},
 			);
 		}

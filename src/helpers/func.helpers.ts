@@ -18,7 +18,7 @@ export const fetcher = async (url: string) => {
 		const result = await req.json();
 		return result;
 	} catch (err) {
-		return err;
+		console.log(err);
 	}
 };
 
@@ -30,6 +30,6 @@ export const checkLogin = async () => {
 			useClientStore.setState({ client: data.user });
 		}
 	} catch (err) {
-		return err;
+		console.error(err);
 	}
 };
