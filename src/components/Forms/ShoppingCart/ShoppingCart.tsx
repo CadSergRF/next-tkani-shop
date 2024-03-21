@@ -62,8 +62,7 @@ const ShoppingCart = () => {
 							{/* Кнопка submit формы */}
 							<button
 								className={styles.sc__button}
-								disabled={!acceptance}
-								// disabled={!acceptance && !methods.formState.isValid}
+								disabled={!acceptance && !methods.formState.isValid}
 							>
 								Заказать
 							</button>

@@ -17,7 +17,6 @@ export async function GET(req: NextRequest, res: NextResponse) {
 				// Если ответ получен
 				if (res.ok) {
 					const resp = await res.json(); // Получаем json
-					// console.log("RESP ", resp);
 					// Устанавливаем cookie для ответа
 					cookies().set({
 						name: INTERN_TOKEN_NAME,

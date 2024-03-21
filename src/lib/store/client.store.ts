@@ -1,9 +1,6 @@
 import { create } from "zustand";
 
-import { TPersonalFullData, TUserFromServer } from "@/Types/TClient";
-import useSWR from "swr";
-import { PUBLIC_HOST } from "../constants/host.constants";
-import { fetcher } from "@/helpers/func.helpers";
+import { TUserFromServer } from "@/Types/TClient";
 import { devtools } from "zustand/middleware";
 
 export type TClient = {

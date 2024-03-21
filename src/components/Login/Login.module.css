@@ -26,6 +26,7 @@
 	max-width: 400px;
 	display: flex;
 	flex-direction: column;
+	position: relative;
 }
 
 .login_label {
@@ -46,13 +47,27 @@
 }
 
 .login_error {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -18px;
+}
+
+.login_error__text {
+	padding-left: 5px;
 	min-height: 20px;
 	color: var(--color-error);
-	font: 400 8px/10px var(--color-error);
+	font: normal 400 12px/1 var(--color-error);
+	font-size: 12px;
+}
+.login_error__btn {
+	bottom: -25px;
 }
 
 .login__button {
+	position: relative;
 	margin: 10px auto;
+	margin-bottom: 26px;
 	display: flex;
 	align-items: center;
 	justify-content: center;

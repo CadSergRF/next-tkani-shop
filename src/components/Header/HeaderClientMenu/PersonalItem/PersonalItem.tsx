@@ -3,11 +3,10 @@
 import Link from "next/link";
 import { useEffect } from "react";
 
-import { checkLogin } from "@/helpers/func.helpers";
-
 import { useClientStore } from "@/lib/store/client.store";
 
 import styles from "./PersonalItem.module.css";
+import { checkLogin } from "@/utils/fetch.utils";
 
 const PersonalItem = () => {
 	// Достаем пользователя из стора
