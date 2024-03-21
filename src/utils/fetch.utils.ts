@@ -13,14 +13,17 @@ export const fetcher = async (url: string) => {
 
 // Проверка авторизации пользователя и установка начального стейта
 export const checkLogin = async () => {
-	try {
-		const data = await fetcher(`${PUBLIC_HOST}/api/user/checkLogin`);
-		if (data) {
-			useClientStore.setState({ client: data.user });
-		}
-	} catch (err) {
-		console.error(err);
+	const res: Response = await fetch(`${PUBLIC_HOST}/api/user/checkLogin`, {
+		cache: "no-store",
+	});
+	const resJson = await res.json();
+
+	if (!res.ok) {
+		return Promise.reject(`${resJson.error}`);
 	}
+
+	useClientStore.setState({ client: resJson.user });
+	return resJson.message;
 };
 
 // Проверка авторизации пользователя и установка начального стейта
@@ -39,6 +42,8 @@ export const userLoginFetch = async (data: TFormValuesLogin) => {
 	if (!res.ok) {
 		return Promise.reject(`${resJson.error}`);
 	}
+
+	console.log(resJson.user);
 
 	useClientStore.setState({ client: resJson.user });
 	return resJson.message;
