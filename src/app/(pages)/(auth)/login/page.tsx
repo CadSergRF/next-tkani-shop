@@ -1,11 +1,5 @@
-import { Login } from "@/components/Login/Login";
-import { Metadata } from "next";
+import { Login } from "@/components/Forms/Login/Login";
 
-export const metadata: Metadata = {
-	title: "Авторизация | Твои-Ткани - интернет-магазин тканей",
-	description: "Твои-Ткани - интернет-магазин тканей | Купить ткань",
-};
-
-export default function LoginPage() {
+export default async function LoginPage() {
 	return <Login />;
 }

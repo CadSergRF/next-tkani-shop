@@ -1,4 +1,4 @@
-import { TFormValuesLogin } from "@/Types/TForms";
+import { TFormValuesLogin, TFormValuesRegistration } from "@/Types/TForms";
 import { PUBLIC_HOST } from "@/lib/constants/host.constants";
 import { useClientStore } from "@/lib/store/client.store";
 
@@ -19,11 +19,10 @@ export const checkLogin = async () => {
 	const resJson = await res.json();
 
 	if (!res.ok) {
-		return Promise.reject(`${resJson.error}`);
+		return false;
 	}
-
-	useClientStore.setState({ client: resJson.user });
-	return resJson.message;
+	useClientStore.setState({ client: resJson });
+	return resJson;
 };
 
 // Проверка авторизации пользователя и установка начального стейта
@@ -43,8 +42,29 @@ export const userLoginFetch = async (data: TFormValuesLogin) => {
 		return Promise.reject(`${resJson.error}`);
 	}
 
-	console.log(resJson.user);
-
-	useClientStore.setState({ client: resJson.user });
 	return resJson.message;
+};
+
+// Проверка авторизации пользователя и установка начального стейта
+export const userRegistrationFetch = async (data: TFormValuesRegistration) => {
+	const res: Response = await fetch(`${PUBLIC_HOST}/api/user/signup`, {
+		method: "POST",
+		headers: { "Content-Type": "application/json" },
+		body: JSON.stringify({
+			userName: data.registrationName,
+			userSurName: data.registrationSurname,
+			userPhone: data.registrationPhonenumber,
+			userEmail: data.registrationEmail,
+			userPassword: data.registrationPassword,
+		}),
+	});
+
+	// const resJson = await res.json();
+
+	// if (!res.ok) {{{{{}}}}
+	// 	return Promise.reject(`${resJson.error}`);
+	// }
+
+	return Promise.resolve("ок");
+	// return resJson.message;
 };

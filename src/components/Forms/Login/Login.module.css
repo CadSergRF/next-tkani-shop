@@ -1,0 +1,152 @@
+.login {
+	width: 100%;
+	padding: 40px 0;
+}
+
+.login__form_wrapper {
+	width: min-content;
+	margin: 0 auto;
+	position: relative;
+}
+
+.login_form {
+	width: 350px;
+	min-height: 100px;
+	padding: 20px;
+	border-radius: 30px;
+	box-shadow: 0 0px 15px rgba(0, 0, 0, 0.2);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.login_title {
+	font: 600 24px/32px var(--var-font-main);
+	margin-bottom: 24px;
+}
+
+.login_input__wrapper {
+	margin: 10px 0;
+	width: 100%;
+	max-width: 400px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.login_label {
+	padding-left: 10px;
+	font: 600 16px/20px var(--color-font-main);
+}
+
+.login_input {
+	border: none;
+	border-bottom: 1px solid #000;
+	padding: 5px;
+	margin-bottom: 4px;
+	font: 400 16px/20px var(--color-font-main);
+}
+
+.login_input:focus {
+	outline: none;
+}
+
+.login_input:disabled {
+	cursor: none;
+	opacity: 0.6;
+}
+
+.login_error {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -13px;
+}
+
+.login_error__text {
+	padding-left: 5px;
+	min-height: 20px;
+	color: var(--color-error);
+	font: normal 400 12px/1 var(--color-error);
+	font-size: 12px;
+}
+
+.login_submit_wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 10px;
+	margin-bottom: 26px;
+	width: 100%;
+	position: relative;
+}
+
+.login_error__submit {
+	bottom: -24px;
+	text-align: center;
+}
+
+.login__submit {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 265px;
+	height: 52px;
+	border: none;
+	border-radius: 6px;
+	font: 600 32px var(--var-font-main);
+	color: var(--color-text-secondary);
+	background-color: var(--color-secondary);
+	cursor: pointer;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.login__submit:disabled {
+	opacity: 0.6;
+	cursor: none;
+}
+
+.login__submit:disabled:active {
+	box-shadow: none;
+}
+
+.login__submit:active {
+	outline: none;
+	box-shadow:
+		inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+		inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.login__modal {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	border-radius: 30px;
+	align-items: center;
+	justify-content: center;
+	backdrop-filter: blur(1px);
+}
+
+.login__modal_submit {
+	display: flex;
+	backdrop-filter: blur(2px);
+}
+
+.login__modal_success {
+	display: flex;
+	background-color: var(--color-white);
+}
+
+.login__info_registration {
+	width: 100%;
+	text-align: center;
+}
+
+.login__info_registration_text {
+	margin-left: 10px;
+}

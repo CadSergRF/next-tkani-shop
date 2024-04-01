@@ -23,7 +23,9 @@ const PersonalItem = () => {
 			href={client ? "/personal-account" : "/login"}
 			className={styles.personal_item__link}
 		>
-			<p className={styles.personal_item__text}>{client ? `Имя` : "Войти"}</p>
+			<p className={styles.personal_item__text}>
+				{client ? `${client.userName}` : "Войти"}
+			</p>
 		</Link>
 	);
 };

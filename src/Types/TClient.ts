@@ -20,12 +20,16 @@ export type TPersonalDeliveryAddress = {
 export type TPersonalFullData = TPersonalData | TPersonalDeliveryAddress;
 
 export type TUserFromServer = {
-	id: string;
-	name: string;
-	role: string;
-	eMail: string;
-	phoneNumber?: string;
-	birthday?: string;
-	clientCard?: string;
-	address: TPersonalDeliveryAddress;
+	userName: string;
+	userRole: string;
 };
+// export type TUserFromServer = {
+// 	id: string;
+// 	name: string;
+// 	role: string;
+// 	eMail: string;
+// 	phoneNumber?: string;
+// 	birthday?: string;
+// 	clientCard?: string;
+// 	address: TPersonalDeliveryAddress;
+// };

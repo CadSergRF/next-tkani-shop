@@ -1,7 +1,13 @@
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
+import jwt from "jsonwebtoken";
 
-const { EXTERNAL_SERVER_HOST, INTERN_TOKEN_NAME } = process.env;
+const {
+	EXTERNAL_SERVER_HOST,
+	INTERN_TOKEN_NAME,
+	INTERN_REFRESH_TOKEN_NAME,
+	INTERN_JWT_SECRET,
+} = process.env;
 
 export async function POST(req: NextRequest) {
 	// Получаем "тело" запроса
@@ -28,7 +34,8 @@ export async function POST(req: NextRequest) {
 	}
 	// Если !ошибка формируем ответ
 	// устанавливаем cookies
-	if (INTERN_TOKEN_NAME) {
+	if (INTERN_TOKEN_NAME && INTERN_REFRESH_TOKEN_NAME) {
+		// Access token
 		cookies().set({
 			name: INTERN_TOKEN_NAME,
 			value: loginData.secret,
@@ -36,10 +43,31 @@ export async function POST(req: NextRequest) {
 			maxAge: 365 * 24 * 60 * 60,
 			path: "/",
 		});
+
+		// Формируем refresh token
+		const secretKey: string =
+			INTERN_REFRESH_TOKEN_NAME && INTERN_JWT_SECRET
+				? INTERN_JWT_SECRET
+				: "some-secret-key";
+
+		const refreshToken = jwt.sign(
+			{ name: loginData.userFullName.name, role: loginData.role },
+			secretKey,
+			{
+				expiresIn: "1d",
+			},
+		);
+		cookies().set({
+			name: INTERN_REFRESH_TOKEN_NAME,
+			value: refreshToken,
+			httpOnly: true,
+			maxAge: 24 * 60 * 60,
+			path: "/",
+		});
 	}
 	// "тело ответа"
 	return NextResponse.json(
-		{ user: loginData.user, message: "Успешная авторизация" },
+		{ message: "Успешная авторизация" },
 		{ status: resLogin.status },
 	);
 }

@@ -9,25 +9,16 @@ export type TClient = {
 	changeParam: (param: string | number) => void;
 };
 
-export const emptyClient = {
-	id: "-",
-	fullName: "-",
-	phoneNumber: "-",
-	birthday: "-",
-	eMail: "-",
-	clientCard: "-",
-	postIndex: "-",
-	town: "-",
-	streetHome: "-",
-	apartment: "-",
-	floor: "-",
-	entrance: "-",
-	intercom: "-",
+export type TLoaded = {
+	loaded: boolean;
 };
 
-export const useClientStore = create<TClient>()(
+export type TClientStore = TClient & TLoaded;
+
+export const useClientStore = create<TClientStore>()(
 	devtools((set, get) => ({
 		client: null,
+		loaded: true,
 		changeData: (authClient: TUserFromServer) =>
 			set(() => {
 				return { client: authClient };

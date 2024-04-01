@@ -30,6 +30,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
 	try {
 		const accessToken = req.cookies.get(INTERN_TOKEN_NAME);
 		const refreshTokenCookies = req.cookies.get(INTERN_REFRESH_TOKEN_NAME);
+
 		// Есть -> возвращаем из cookies имя и роль
 		if (refreshTokenCookies) {
 			try {

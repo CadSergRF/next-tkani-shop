@@ -1,17 +1,33 @@
 "use client";
 
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
+import clsx from "clsx";
 import { SubmitHandler, useForm } from "react-hook-form";
 
-import styles from "./Login.module.css";
-import { REGEX_EMAIL } from "@/lib/constants/constants";
 import { userLoginFetch } from "@/utils/fetch.utils";
+
+import { useClientStore } from "@/lib/store/client.store";
+import { REGEX_EMAIL } from "@/lib/constants/constants";
+
 import { TFormValuesLogin } from "@/Types/TForms";
-import { useRouter } from "next/navigation";
-import clsx from "clsx";
+
 import { Loader } from "../ui-kit/Loader/Loader";
 import { Success } from "../ui-kit/Success/Success";
 
+import styles from "./Login.module.css";
+
 const Login = () => {
+	// Проверка - авторизован ли пользователь.
+	// Если Да -> отправляем на главную
+	const client = useClientStore((state) => state.client);
+	const router = useRouter();
+
+	if (client) {
+		router.push("/");
+	}
+
 	const {
 		register,
 		handleSubmit,
@@ -22,8 +38,6 @@ const Login = () => {
 	} = useForm<TFormValuesLogin>({
 		mode: "onBlur",
 	});
-
-	const router = useRouter();
 
 	const onSubmit: SubmitHandler<TFormValuesLogin> = async (data) => {
 		try {
