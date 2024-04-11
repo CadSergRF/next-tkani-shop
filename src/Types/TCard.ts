@@ -1,17 +1,14 @@
-export type TCardMainInfo = {
-	id: string; // id товара в базе
-	article: string; // Артикул
-	title: string; // Наименование
+export type TCardMainData = {
+	articul: string; // Артикул
+	name: string; // Наименование
 	price: number; // Цена за единицу
 	oldPrice?: number; // "Старая цена" - для акций
 	quantity?: number; // Количество, остаток
-	measure: string; // Единица измерения
-	image?: string; // Изображение товара
-	combination?: string[]; // Дополнительные фото товара
+	picture?: string; // Изображение товара
 	description?: string; // Описание товара
 };
 
-type TCharacteristic = {
+type TCardCharacteristic = {
 	width?: number; // Ширина
 	picture?: string; // Рисунок
 	color?: string; // Основной цвет
@@ -20,16 +17,28 @@ type TCharacteristic = {
 	weight?: string; // Плотность или вес за единицу измерения
 };
 
-type TSEO = {
-	seoHeader?: string; // Заголовок
-	seoDescription?: string; // Описание
-	seoKeyWords?: string[]; // Ключевые слова
+type TCardSEO = {
+	header?: string; // Заголовок
+	description?: string; // Описание
+	keyWords?: string[]; // Ключевые слова
 };
 
-type TCardAdditionalInfo = {
-	recommended?: TCardMainInfo[]; // Рекомендованные товары или сочетания
-	characteristic: TCharacteristic;
-	seoTags: TSEO;
+type TCardConfig = {
+	visible: boolean;
+	promo?: boolean;
+	section?: string;
+	measure?: string;
 };
 
-export type TCardFull = TCardMainInfo & TCardAdditionalInfo;
+type TCard = {
+	mainData: TCardMainData;
+	characteristic: TCardCharacteristic;
+	seoTags: TCardSEO;
+	configCard: TCardConfig;
+};
+
+export type TCardId = {
+	_id: string;
+};
+
+export type TCardFull = TCard & TCardId;

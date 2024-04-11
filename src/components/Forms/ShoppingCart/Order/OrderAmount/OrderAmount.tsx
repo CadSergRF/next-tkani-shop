@@ -8,7 +8,7 @@ const OrderAmount = () => {
 	// Собираем сумму заказа из стора
 	const orderReduce = useCartStore((state) => {
 		return state.cart.reduce(
-			(acc, item) => acc + item.cartProduct.price * item.orderQuantity,
+			(acc, item) => acc + item.cartProduct.mainData.price * item.orderQuantity,
 			0,
 		);
 	});

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { TCardMainInfo } from "@/Types/TCard";
+import { TCardFull } from "@/Types/TCard";
 
 import styles from "./CartItem.module.css";
 import clsx from "clsx";
@@ -8,18 +8,20 @@ import { useCartStore } from "@/lib/store/cart.store";
 import { roundedNum } from "@/helpers/func.helpers";
 
 type Props = {
-	product: TCardMainInfo;
+	product: TCardFull;
 	index: number;
 };
 
 const CartItem = ({ product, index }: Props) => {
-	const { id, article, title, price, measure, image } = product;
+	const { _id, mainData, configCard } = product;
+	const { articul, name, price, picture } = mainData;
+	const { measure } = configCard;
 
 	const removeFromCart = useCartStore((state) => state.removeFromCart);
 	const updateQuantity = useCartStore((state) => state.updateQuantity);
 	const quantity = useCartStore((state) => state.cart[index].orderQuantity);
 
-	const itemSum = roundedNum(price * quantity, 2).toFixed(2)
+	const itemSum = roundedNum(price * quantity, 2).toFixed(2);
 
 	const priceMeasure = measure === "м.п." ? "руб./м." : "руб.";
 
@@ -27,20 +29,22 @@ const CartItem = ({ product, index }: Props) => {
 		<li className={styles.cart_item__container}>
 			{/* Блок изображения */}
 			<div>
-				{image && (
-					<Image
-						src={image}
-						width={80}
-						height={80}
-						alt="Превью новости"
-						style={{ objectFit: "cover" }}
+				{picture ? (
+					<img
+						src={picture}
+						alt="Фото ткани"
+						className={styles.card_image}
 					/>
+				) : (
+					<div
+						className={clsx(styles.card_image, styles.card_image_noImage)}
+					></div>
 				)}
 			</div>
 			{/* Наименование и артикул */}
 			<div className={styles.cart_item__text}>
-				<h3 className={styles.cart_item__title}>{title}</h3>
-				<p className={styles.cart_item__article}>Артикул: {article}</p>
+				<h3 className={styles.cart_item__title}>{name}</h3>
+				<p className={styles.cart_item__article}>Артикул: {articul}</p>
 			</div>
 			{/* Количество товара */}
 			<div className={styles.cart_item__input_number__container}>
@@ -51,7 +55,7 @@ const CartItem = ({ product, index }: Props) => {
 							styles.cart_item__input_number__btn,
 							styles.cart_item__input_number__btn_minus,
 						)}
-						onClick={() => updateQuantity(id, "decrease")}
+						onClick={() => updateQuantity(_id, "decrease")}
 					/>
 					<input
 						className={styles.cart_item__input_number__input}
@@ -68,7 +72,7 @@ const CartItem = ({ product, index }: Props) => {
 							styles.cart_item__input_number__btn,
 							styles.cart_item__input_number__btn_plus,
 						)}
-						onClick={() => updateQuantity(id, "increase")}
+						onClick={() => updateQuantity(_id, "increase")}
 					/>
 				</div>
 				<p className={styles.cart_item__input_number__text}>{measure}</p>
@@ -97,7 +101,7 @@ const CartItem = ({ product, index }: Props) => {
 			<button
 				type="button"
 				className={styles.cart_item__btn_remove}
-				onClick={() => removeFromCart(id)}
+				onClick={() => removeFromCart(_id)}
 			>
 				удалить
 			</button>

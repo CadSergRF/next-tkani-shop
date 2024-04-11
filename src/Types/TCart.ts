@@ -1,4 +1,4 @@
-import { TCardMainInfo } from "./TCard";
+import { TCardFull } from "./TCard";
 import { TPersonalData, TPersonalDeliveryAddress } from "./TClient";
 
 export const DeliveryMethod = [
@@ -14,7 +14,7 @@ export const DeliveryMethod = [
 ];
 
 export type TOrderProduct = {
-	cartProduct: TCardMainInfo;
+	cartProduct: TCardFull;
 	orderQuantity: number;
 };
 

@@ -1,0 +1,35 @@
+.filter {
+	width: max-content;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.filter__title {
+	font: 500 18px/30px var(--var-font-main);
+	margin-bottom: 10px;
+}
+
+.sectionFilter {
+	list-style-type: none;
+}
+
+.sectionFilter__item {
+	cursor: pointer;
+	font: 400 14px/25px var(--var-font-main);
+}
+
+.sectionFilter__item_active {
+	font-weight: 600;
+}
+
+.subFilter {
+	list-style-type: none;
+}
+
+.subFilter__item {
+	display: flex;
+	gap: 10px;
+	cursor: pointer;
+	font: 400 14px/25px var(--var-font-main);
+}

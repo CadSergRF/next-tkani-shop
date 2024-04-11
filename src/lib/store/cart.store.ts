@@ -20,7 +20,7 @@ export const useCartStore = create<cartState>()(
 					set(() => {
 						const newCart = get().cart;
 						const findProduct = newCart.find(
-							(p) => p.cartProduct.id === productToCart.cartProduct.id,
+							(p) => p.cartProduct._id === productToCart.cartProduct._id,
 						);
 						if (findProduct) {
 							const newQuantity =
@@ -36,7 +36,7 @@ export const useCartStore = create<cartState>()(
 					set(() => {
 						const newCart = get().cart;
 						const filteredCart = newCart.filter(
-							(item) => item.cartProduct.id !== productID,
+							(item) => item.cartProduct._id !== productID,
 						);
 
 						return { cart: filteredCart };
@@ -45,7 +45,7 @@ export const useCartStore = create<cartState>()(
 					set(() => {
 						const newCart = get().cart;
 						const findProduct = newCart.find(
-							(item) => item.cartProduct.id === productID,
+							(item) => item.cartProduct._id === productID,
 						);
 
 						if (findProduct) {

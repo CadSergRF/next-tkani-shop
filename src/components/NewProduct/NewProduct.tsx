@@ -11,7 +11,11 @@ const NewProduct = () => (
 		<ul className={styles.new_product__cards}>
 			{card_rek &&
 				card_rek?.length > 0 &&
-				card_rek.map((item) => <Card key={item.id} card={item} />)}
+				card_rek.map((item) => (
+					<li key={item._id}>
+						<Card card={item} />
+					</li>
+				))}
 			{/* // <Card card={card_one} />
 			// <Card card={card_one} />
 			// <Card card={card_one} /> */}

@@ -8,9 +8,9 @@ const HeaderClientMenu = () => {
 	return (
 		<div className={styles.cart_box}>
 			<div className={styles.cart_box__icons}>
-				<PersonalItem />
+				{/* <PersonalItem /> */}
 				{/* <HCMItem path="/personal-account" /> */}
-				<HCMItem path="/favourites" />
+				{/* <HCMItem path="/favourites" /> */}
 				<HCMItem path="/shopping-cart" />
 			</div>
 			<WriteSocialBtn

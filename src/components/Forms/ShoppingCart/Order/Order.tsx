@@ -24,7 +24,7 @@ const Order = () => {
 				{cartItems ? (
 					cartItems.map((item, index) => (
 						<CartItem
-							key={item.cartProduct.id}
+							key={item.cartProduct._id}
 							product={item.cartProduct}
 							index={index}
 						/>

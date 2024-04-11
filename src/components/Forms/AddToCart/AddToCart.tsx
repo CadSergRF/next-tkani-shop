@@ -3,7 +3,7 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import clsx from "clsx";
 
-import { TCardFull, TCardMainInfo } from "@/Types/TCard";
+import { TCardFull } from "@/Types/TCard";
 
 import { useCartStore } from "@/lib/store/cart.store";
 import { InputNumber } from "@/components/ui-kit/InputNumber/InputNumber";
@@ -13,7 +13,7 @@ import { roundedNum } from "@/helpers/func.helpers";
 import { REGEX_QUANTITY } from "@/lib/constants/constants";
 
 type Props = {
-	card: TCardMainInfo;
+	card: TCardFull;
 	displayItem?: boolean;
 	column?: boolean;
 	reverse?: boolean;
@@ -27,7 +27,7 @@ const AddToCart = ({
 	reverse = false,
 	large = false,
 }: Props) => {
-	const { measure } = card; // Отображение единицы измерения
+	const { measure } = card.configCard; // Отображение единицы измерения
 	const [quantity, setQuantity] = useState<number>(0); // Количество для заказа
 	const addToCart = useCartStore((state) => state.addToCart);
 

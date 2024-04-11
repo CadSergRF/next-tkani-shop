@@ -4,6 +4,7 @@
 }
 
 .card {
+	justify-self: center;
 	width: 275px;
 	height: 435px;
 	display: flex;
@@ -14,8 +15,13 @@
 .card_image {
 	width: 275px;
 	height: 275px;
+	min-height: 275px;
 	-o-object-fit: contain;
 	object-fit: contain;
+}
+
+.card_image_noImage {
+	background: url(../../lib/images/no-photo.svg) no-repeat center;
 }
 
 .card_info {
