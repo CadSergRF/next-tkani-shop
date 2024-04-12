@@ -6,14 +6,15 @@ import {
 import styles from "./Filters.module.css";
 import { useReqSearchStore } from "@/lib/store/reqSearchCards.store";
 import clsx from "clsx";
-import { TGetSearchProductResponse } from "@/Types/TResponse";
-import { KeyedMutator } from "swr";
+// import { TGetSearchProductResponse } from "@/Types/TResponse";
+// import { KeyedMutator } from "swr";
 
-type TFilterProps = {
-	mutate: KeyedMutator<TGetSearchProductResponse | undefined>;
-};
+// type TFilterProps = {
+// 	mutate: KeyedMutator<TGetSearchProductResponse | undefined>;
+// };
 
-const Filters = ({ mutate }: TFilterProps) => {
+// const Filters = ({ mutate }: TFilterProps) => {
+const Filters = () => {
 	const { reqSearch, changeSection, changePicture, changeColor } =
 		useReqSearchStore((state) => state);
 

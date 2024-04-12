@@ -17,18 +17,19 @@ type reqSearchCardsState = {
 
 export const useReqSearchStore = create<reqSearchCardsState>()(
 	devtools(
-		// persist(
 		(set, get) => ({
 			reqSearch: initialGetCardsRequest,
 			changeSection: (newSection: string) =>
 				set(() => {
 					const newReq = get().reqSearch;
+					newReq.searchName = "";
 					newReq.sectionName = newSection;
 					return { reqSearch: newReq };
 				}),
 			changePicture: (newPicture: string) =>
 				set(() => {
 					const newReq = get().reqSearch;
+					newReq.searchName = "";
 					if (newReq.pictureName.includes(newPicture)) {
 						newReq.pictureName.splice(
 							newReq.pictureName.indexOf(newPicture),
@@ -42,6 +43,7 @@ export const useReqSearchStore = create<reqSearchCardsState>()(
 			changeColor: (newColor: string) =>
 				set(() => {
 					const newReq = get().reqSearch;
+					newReq.searchName = "";
 					if (newReq.colorName.includes(newColor)) {
 						newReq.colorName.splice(newReq.colorName.indexOf(newColor), 1);
 					} else {
@@ -52,7 +54,10 @@ export const useReqSearchStore = create<reqSearchCardsState>()(
 			changeSearchName: (newSearchName: string) =>
 				set(() => {
 					let newReq = get().reqSearch;
-					newReq = initialGetCardsRequest;
+					newReq.sectionName = "Все";
+					newReq.pictureName = [];
+					newReq.colorName = [];
+					newReq.paginationPage = 1;
 					newReq.searchName = newSearchName;
 					return { reqSearch: newReq };
 				}),
@@ -77,5 +82,4 @@ export const useReqSearchStore = create<reqSearchCardsState>()(
 		}),
 		{ name: "reqSearchStore" },
 	),
-	// ),
 );

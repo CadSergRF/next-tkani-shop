@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import clsx from "clsx";
 
-import "./globals.css";
+import { montserrat } from "@/lib/fonts/font";
 
 import { Footer } from "@/components/Footer/Footer";
 import { Header } from "@/components/Header/Header";
-import clsx from "clsx";
 
-const montserrat = Montserrat({
-	weight: ["400", "500", "600", "700"],
-	style: ["normal"],
-	subsets: ["cyrillic"],
-	display: "swap",
-	variable: "--var-font-main",
-});
+import "./globals.css";
 
 export const metadata: Metadata = {
 	title: "Твои-Ткани - интернет-магазин тканей",
