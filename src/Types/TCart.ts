@@ -1,17 +1,5 @@
 import { TCardFull } from "./TCard";
-import { TPersonalData, TPersonalDeliveryAddress } from "./TClient";
-
-export const DeliveryMethod = [
-	"Предложите мне несколько вариантов доставки на выбор",
-	"Самовывоз с пункта выдачи: г. Кемерово, пр. Октябрьский, 28",
-	"Курьерская доставка по г. Кемерово",
-	"Почта России (посылка в отделение)",
-	"Почта России (почтомат)",
-	"СДЭК до пункта выдачи",
-	"СДЭК курьером до двери",
-	"Транспортная компания Энергия",
-	"Транспортная компания ПЭК",
-];
+import { TPersonalDeliveryAddress } from "./TClient";
 
 export type TOrderProduct = {
 	cartProduct: TCardFull;
@@ -19,7 +7,6 @@ export type TOrderProduct = {
 };
 
 export type TCartFormDelivery = {
-	// cart: TOrderProduct[];
 	customerData: {
 		name: string;
 		phoneNumber: string;
@@ -35,3 +22,37 @@ export type TCartFormInput = {
 	deliveryType: string;
 	concentRules: boolean;
 };
+
+export type TDeliveryOffice = Required<
+	Pick<
+		TPersonalDeliveryAddress,
+		"town" | "streetHome" | "houseNumber" | "apartment"
+	>
+>;
+
+export type TDeliveryCourierHomeOffice = Omit<TDeliveryOffice, "town">;
+
+export type TDeliveryPostOffice = Required<
+	Pick<
+		TPersonalDeliveryAddress,
+		"postIndex" | "town" | "streetHome" | "houseNumber" | "apartment"
+	>
+>;
+
+export type TDeliveryPostAutomat = Omit<TDeliveryPostOffice, "apartment">;
+
+export type TDeliveryObject = {
+	title: string;
+	name: string;
+};
+
+export type TChosenDeliveryMethod = {
+	name: string;
+	address: TDeliveryObject[];
+};
+
+export type TUnionDeliveryMethod =
+	| TDeliveryPostAutomat
+	| TDeliveryPostOffice
+	| TDeliveryCourierHomeOffice
+	| TDeliveryOffice;

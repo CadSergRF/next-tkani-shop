@@ -31,6 +31,7 @@ const OrderInput = ({ inputTitle, inputName, inputType }: Props) => {
 				{...register(`${inputName}`)}
 				type={inputType}
 				className={styles.orderInput__item_input}
+				defaultValue=""
 			/>
 		</label>
 	);

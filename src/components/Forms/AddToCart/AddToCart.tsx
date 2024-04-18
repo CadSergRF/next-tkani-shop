@@ -10,7 +10,7 @@ import { InputNumber } from "@/components/ui-kit/InputNumber/InputNumber";
 
 import styles from "./AddToCart.module.css";
 import { roundedNum } from "@/helpers/func.helpers";
-import { REGEX_QUANTITY } from "@/lib/constants/constants";
+import { REGEX_QUANTITY } from "@/lib/constants/regex.constants";
 
 type Props = {
 	card: TCardFull;

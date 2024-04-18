@@ -8,9 +8,10 @@ export type TPersonalData = {
 };
 
 export type TPersonalDeliveryAddress = {
-	postIndex?: string;
+	postIndex: string;
 	town: string;
 	streetHome: string;
+	houseNumber: string;
 	apartment: string;
 	floor?: string;
 	entrance?: string;
@@ -23,13 +24,3 @@ export type TUserFromServer = {
 	userName: string;
 	userRole: string;
 };
-// export type TUserFromServer = {
-// 	id: string;
-// 	name: string;
-// 	role: string;
-// 	eMail: string;
-// 	phoneNumber?: string;
-// 	birthday?: string;
-// 	clientCard?: string;
-// 	address: TPersonalDeliveryAddress;
-// };

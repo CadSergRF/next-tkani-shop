@@ -7,7 +7,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 
 import { userRegistrationFetch } from "@/utils/fetch.utils";
 
-import { REGEX_EMAIL, REGEX_PHONE } from "@/lib/constants/constants";
+import { REGEX_EMAIL, REGEX_PHONE } from "@/lib/constants/regex.constants";
 
 import { TFormValuesRegistration } from "@/Types/TForms";
 

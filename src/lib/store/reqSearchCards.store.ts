@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-import { devtools, persist } from "zustand/middleware";
+import { devtools } from "zustand/middleware";
 import { TReqSearchCards } from "@/Types/TReqSearch";
 import { initialGetCardsRequest } from "../constants/cards.constants";
 

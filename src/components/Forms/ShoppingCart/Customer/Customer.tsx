@@ -35,57 +35,57 @@ const Customer = () => {
 				)}
 			/>
 
-			<h3 className={styles.customer__title}>Адрес доставки</h3>
+			{/* <h3 className={styles.customer__title}>Адрес доставки</h3> */}
 
 			{/* Населенный пункт */}
-			<OrderInput
+			{/* <OrderInput
 				inputTitle="Населенный пункт*"
 				inputName="customerAddress.town"
 				inputType="text"
-			/>
+			/> */}
 			{/* Улица и номер дома */}
-			<OrderInput
+			{/* <OrderInput
 				inputTitle="Улица и номер дома*"
 				inputName="customerAddress.streetHome"
 				inputType="text"
-			/>
+			/> */}
 			{/* Номер квартиры */}
-			<OrderInput
+			{/* <OrderInput
 				inputTitle="Номер квартиры*"
 				inputName="customerAddress.apartment"
 				inputType="text"
-			/>
+			/> */}
 			{/* Этаж */}
-			<OrderInput
+			{/* <OrderInput
 				inputTitle="Этаж"
 				inputName="customerAddress.floor"
 				inputType="text"
-			/>
+			/> */}
 			{/* Подъезд */}
-			<OrderInput
+			{/* <OrderInput
 				inputTitle="Подъезд"
 				inputName="customerAddress.entrance"
 				inputType="text"
-			/>
+			/> */}
 			{/* Домофон */}
-			<OrderInput
+			{/* <OrderInput
 				inputTitle="Домофон"
 				inputName="customerAddress.intercom"
 				inputType="text"
-			/>
+			/> */}
 			{/* Почтовый индекс */}
-			<OrderInput
+			{/* <OrderInput
 				inputTitle="Почтовый индекс"
 				inputName="customerAddress.postIndex"
 				inputType="number"
-			/>
+			/> */}
 
-			<span
+			{/* <span
 				className={clsx(
 					styles.customer__empty_block,
 					styles.customer__empty_block__margin,
 				)}
-			/>
+			/> */}
 		</section>
 	);
 };

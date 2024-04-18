@@ -3,9 +3,11 @@
 }
 
 .sub_menu {
-	list-style-type: none;
-	margin: 5px auto;
 	width: 73%;
+	min-width: 1024px;
+	max-width: 1700px;
+	list-style-type: none;
+	margin: 10px auto 25px;
 	display: flex;
 	align-items: center;
 	gap: 20px;

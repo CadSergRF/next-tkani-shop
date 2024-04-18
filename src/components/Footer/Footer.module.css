@@ -1,5 +1,7 @@
 .footer {
 	width: 73%;
+	min-width: 1024px;
+	max-width: 1700px;
 	margin: 26px auto 0;
 	padding: 35px 30px;
 	background-color: var(--color-al-white);

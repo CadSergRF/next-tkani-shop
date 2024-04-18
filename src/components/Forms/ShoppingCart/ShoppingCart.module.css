@@ -1,9 +1,13 @@
 .sc_container {
-	min-width: 100%;
+	width: 73%;
+	min-width: 1024px;
+	max-width: 1700px;
 }
 
 .sc_title {
-	width: 100%;
+	width: 73%;
+	min-width: 1024px;
+	max-width: 1700px;
 	font: 700 24px var(--var-font-main);
 	line-height: 3;
 }

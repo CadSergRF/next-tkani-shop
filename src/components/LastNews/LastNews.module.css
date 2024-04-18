@@ -1,5 +1,6 @@
 .last_news {
 	width: 100%;
+	margin-top: 25px;
 }
 
 .last_news__title {
@@ -12,5 +13,5 @@
 
 .last_news__zone {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-between;
 }

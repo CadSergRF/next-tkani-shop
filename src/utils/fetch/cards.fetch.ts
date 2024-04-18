@@ -11,7 +11,7 @@ export const getSearchAllCards = async (
 		const allSearchCards: Response = await fetch(
 			`${EXTERNAL_SERVER_HOST}${url}`,
 			{
-				cache: "default",
+				cache: "no-cache",
 			},
 		);
 		const resAllSearchCards = await allSearchCards.json();

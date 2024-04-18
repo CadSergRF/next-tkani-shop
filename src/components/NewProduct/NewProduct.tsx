@@ -1,9 +1,8 @@
-import { card_one } from "@/lib/FakeData/FakeProduct/newProductFake";
-
 import { Card } from "../Card/Card";
 
-import styles from "./NewProduct.module.css";
 import { card_rek } from "@/lib/FakeData/FakeProduct/newProductsFake";
+
+import styles from "./NewProduct.module.css";
 
 const NewProduct = () => (
 	<section className={styles.new_product}>
@@ -16,9 +15,6 @@ const NewProduct = () => (
 						<Card card={item} />
 					</li>
 				))}
-			{/* // <Card card={card_one} />
-			// <Card card={card_one} />
-			// <Card card={card_one} /> */}
 		</ul>
 	</section>
 );

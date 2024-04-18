@@ -2,6 +2,7 @@
 	width: 100%;
 	display: flex;
 	justify-content: flex-end;
+	gap: 30px;
 }
 
 .form {
@@ -44,4 +45,12 @@
 		center;
 	background-color: var(--color-al-white);
 	cursor: pointer;
+}
+
+.select {
+	font: 400 14px var(--var-font-main);
+}
+
+.select:focus {
+	outline: none;
 }

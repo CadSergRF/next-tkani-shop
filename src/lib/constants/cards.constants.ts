@@ -3,7 +3,7 @@ export const initialGetCardsRequest = {
 	pictureName: [],
 	colorName: [],
 	searchName: "",
-	sortName: "articulDown",
+	sortName: "",
 	paginationLimit: 100,
 	paginationPage: 1,
 };

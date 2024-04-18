@@ -16,6 +16,7 @@ const DeliveryAddress = ({ deliveryAddress, consentAddress }: Props) => {
 	const {
 		town = "-",
 		streetHome = "-",
+		houseNumber = "-",
 		apartment = "-",
 		floor = "-",
 		entrance = "-",
@@ -30,8 +31,12 @@ const DeliveryAddress = ({ deliveryAddress, consentAddress }: Props) => {
 					text={town}
 				/>
 				<BlockLikeForm
-					title="Улица и номер дома"
+					title="Улица"
 					text={streetHome}
+				/>
+				<BlockLikeForm
+					title="Номер дома"
+					text={houseNumber}
 				/>
 				<BlockLikeForm
 					title="Номер квартиры"

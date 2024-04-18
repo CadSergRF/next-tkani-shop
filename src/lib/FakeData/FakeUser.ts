@@ -11,7 +11,8 @@ export const fakeUser: TPersonalData = {
 
 export const fakeUserDeliveryAddress: TPersonalDeliveryAddress = {
 	town: "Кемерово",
-	streetHome: "пр. Октябрьский, 28",
+	streetHome: "пр. Октябрьский",
+	houseNumber: "28",
 	apartment: "814",
 	floor: "8",
 	entrance: "1",

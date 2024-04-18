@@ -9,7 +9,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { userLoginFetch } from "@/utils/fetch.utils";
 
 import { useClientStore } from "@/lib/store/client.store";
-import { REGEX_EMAIL } from "@/lib/constants/constants";
+import { REGEX_EMAIL } from "@/lib/constants/regex.constants";
 
 import { TFormValuesLogin } from "@/Types/TForms";
 

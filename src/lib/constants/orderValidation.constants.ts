@@ -5,12 +5,11 @@ import {
 	REGEX_PHONE,
 	REGEX_RUSSIAN_LETTERS,
 	REGEX_RUSSIAN_LETTERS_NUMBERS,
-} from "./constants";
+} from "./regex.constants";
 
 export const schemaOrderValidation = yup
 	.object()
 	.shape({
-		// cart: yup.object(),
 		customerData: yup.object().shape({
 			name: yup
 				.string()
@@ -31,6 +30,10 @@ export const schemaOrderValidation = yup
 				.required("Внесите e-mail"),
 		}),
 		customerAddress: yup.object().shape({
+			postIndex: yup
+				.string()
+				.matches(REGEX_NUMBERS, `Только цифры или \u00AB-\u00BB`)
+				.required("Необходимо заполнить поле"),
 			town: yup
 				.string()
 				.min(3, "Минимальное количество букв - 3")
@@ -41,6 +44,12 @@ export const schemaOrderValidation = yup
 				.string()
 				.min(3, "Минимальное количество букв - 3")
 				.max(100, "Максимальное количество букв - 100")
+				.matches(REGEX_RUSSIAN_LETTERS_NUMBERS, "Только русские буквы и цифры")
+				.required("Необходимо заполнить поле"),
+			houseNumber: yup
+				.string()
+				.min(1, "Введите номер дома")
+				.max(10, "Максимальное количество цифр/букв - 10")
 				.matches(REGEX_RUSSIAN_LETTERS_NUMBERS, "Только русские буквы и цифры")
 				.required("Необходимо заполнить поле"),
 			apartment: yup
@@ -56,9 +65,6 @@ export const schemaOrderValidation = yup
 				.string()
 				.matches(REGEX_NUMBERS, `Только цифры или \u00AB-\u00BB`),
 			intercom: yup
-				.string()
-				.matches(REGEX_NUMBERS, `Только цифры или \u00AB-\u00BB`),
-			postIndex: yup
 				.string()
 				.matches(REGEX_NUMBERS, `Только цифры или \u00AB-\u00BB`),
 		}),
