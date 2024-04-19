@@ -9,6 +9,7 @@ type cartState = {
 	addToCart: (productToCart: TOrderProduct) => void;
 	removeFromCart: (productID: string) => void;
 	updateQuantity: (productID: string, action: "increase" | "decrease") => void;
+	clearState: () => void;
 };
 
 export const useCartStore = create<cartState>()(
@@ -59,6 +60,13 @@ export const useCartStore = create<cartState>()(
 							}
 							findProduct.orderQuantity = roundedNum(quantityVariable, 2);
 						}
+
+						return { cart: newCart };
+					}),
+				clearState: () =>
+					set(() => {
+						const newCart = get().cart;
+						newCart.length = 0;
 
 						return { cart: newCart };
 					}),

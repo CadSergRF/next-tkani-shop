@@ -53,3 +53,9 @@
 		inset -2px -2px 3px rgba(255, 255, 255, 0.6),
 		inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
+
+.sc__orderDispatch {
+	width: 100%;
+	min-height: 200px;
+	text-align: center;
+}

@@ -1,6 +1,6 @@
 export const REGEX_QUANTITY = /^[0-9]*\.?[0-9]*$/;
 export const REGEX_PHONE =
-	/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+	/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{6,10}$/;
 export const REGEX_RUSSIAN_LETTERS = /^[а-яА-ЯёЁ\s-]+$/;
 export const REGEX_NUMBERS = /^[0-9\-]+$/;
 export const REGEX_RUSSIAN_LETTERS_NUMBERS = /^[а-яА-ЯёЁ0-9\s-]+$/;
