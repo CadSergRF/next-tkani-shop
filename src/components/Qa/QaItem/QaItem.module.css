@@ -1,0 +1,50 @@
+.wrapper {
+	width: 100%;
+	padding: 10px 0;
+	border-top: 1px solid var(--color-light-gray);
+}
+
+.wrapper:last-child {
+	border-bottom: 1px solid var(--color-light-gray);
+}
+
+.titleWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 15px 20px;
+	cursor: pointer;
+}
+
+.title {
+	font: 600 16px var(--var-font-main);
+}
+
+.btn {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background-color: var(--color-light-gray);
+	background: url(../../../lib/images/icon-plus.svg) no-repeat center;
+	background-size: contain;
+	cursor: pointer;
+	transition: rotate ease-in-out 0.5s;
+}
+
+.btn__qaActive {
+	rotate: 45deg;
+}
+
+.text {
+	font: 500 14px/21px var(--var-font-main);
+	white-space: pre-line;
+	display: block;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height ease-in-out 0.5s;
+}
+
+.text__qaActive {
+	max-height: 700px;
+	overflow: hidden;
+}

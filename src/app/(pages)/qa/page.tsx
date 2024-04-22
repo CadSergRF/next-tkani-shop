@@ -1,3 +1,4 @@
+import { Qa } from "@/components/Qa/Qa";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -5,10 +6,6 @@ export const metadata: Metadata = {
 	description: "Твои-Ткани - интернет-магазин тканей | Купить ткань",
 };
 
-export default function Qa() {
-	return (
-		<div>
-			<h2>Вопрос - ответ</h2>
-		</div>
-	);
+export default function QaPage() {
+	return <Qa />;
 }
