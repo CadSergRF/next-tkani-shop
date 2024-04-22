@@ -41,8 +41,7 @@
 	height: 30px;
 	border: none;
 	border-left: 1px solid var(--color-light-gray);
-	background: url(/_next/static/media/icon-search.38a35dd7.svg) no-repeat center
-		center;
+	background: url(../../../lib/images/icon-search.svg) no-repeat center center;
 	background-color: var(--color-al-white);
 	cursor: pointer;
 }

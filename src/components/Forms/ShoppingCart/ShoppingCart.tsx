@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import { useForm, SubmitHandler, FormProvider } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
@@ -14,6 +14,7 @@ import {
 import { schemaOrderValidation } from "@/lib/constants/orderValidation.constants";
 
 import { renderAddress } from "@/helpers/renderAddress.helper";
+import { redirectMain } from "@/helpers/redirect.helper";
 import { postOrderDispatch } from "@/utils/fetch/order.fetch";
 
 import { useCartStore } from "@/lib/store/cart.store";
@@ -25,8 +26,7 @@ import { PrivatePolicyCheck } from "./PrivatePolicyCheck/PrivatePolicyCheck";
 import { Order } from "./Order/Order";
 
 import styles from "./ShoppingCart.module.css";
-import { redirect } from "next/navigation";
-import { mainRedirect } from "@/helpers/redirect.helper";
+import Link from "next/link";
 
 const ShoppingCart = () => {
 	// State для уведомления об отправке заказа
@@ -97,7 +97,7 @@ const ShoppingCart = () => {
 				clearState();
 				// Время для показа уведомления и редирект на каталог
 				setTimeout(() => {
-					mainRedirect();
+					redirectMain();
 				}, 3000);
 			} else {
 				throw new Error("Ошибка создания заказа");
@@ -120,6 +120,24 @@ const ShoppingCart = () => {
 
 	if (orderErrorDispatch)
 		return <h2 className={styles.sc__orderDispatch}>Ошибка отправки заказа</h2>;
+
+	// ---------  TO RENDER ---------
+
+	if (cart?.length === 0)
+		return (
+			<div className={styles.emptyCart}>
+				<h2 className={styles.emptyCart_title}>Ваша корзина пуста</h2>
+				<p className={styles.emptyCart_text}>
+					Воспользуйтесь поиском, чтобы найти всё, что нужно
+				</p>
+				<Link
+					href="/katalog"
+					className={styles.sc__emptyCart_Link}
+				>
+					Начать покупки
+				</Link>
+			</div>
+		);
 
 	return (
 		<>

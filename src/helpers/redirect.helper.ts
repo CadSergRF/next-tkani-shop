@@ -2,10 +2,10 @@
 
 import { redirect } from "next/navigation";
 
-export const katalogRedirect = async () => {
+export const redirectKatalog = async () => {
 	redirect("/katalog");
 };
 
-export const mainRedirect = async () => {
+export const redirectMain = async () => {
 	redirect("/katalog");
 };

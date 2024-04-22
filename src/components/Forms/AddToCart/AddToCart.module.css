@@ -31,6 +31,10 @@
 	transition: opacity 0.2s ease-in-out;
 }
 
+.add_to_cart__btn:disabled {
+	cursor: none;
+}
+
 .add_to_cart__btn:active {
 	outline: none;
 	box-shadow:

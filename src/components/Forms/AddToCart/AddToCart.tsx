@@ -71,6 +71,7 @@ const AddToCart = ({
 				className={clsx(styles.add_to_cart__btn, {
 					[styles.add_to_card__btn_large]: large,
 				})}
+				disabled={quantity === 0}
 			>
 				В корзину
 			</button>
